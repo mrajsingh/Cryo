@@ -1,0 +1,471 @@
+Only in src/arch-i386/.: arch_r_objs.o
+Only in src/arch-i386/.: arch_w_objs.o
+Only in src/arch-i386/.: asmfuncs.o
+diff -cB src/arch-i386/./cp_r_i387.c ../../../cryopid-0.5.9.1/src/arch-i386/./cp_r_i387.c
+*** src/arch-i386/./cp_r_i387.c	2012-10-21 11:58:00.635167028 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./cp_r_i387.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 1,5 ****
+! //``#include <linux/user.h>
+! #include <sys/user.h>
+  #include <sys/ptrace.h>
+  #include <string.h>
+  #include <errno.h>
+--- 1,4 ----
+! #include <linux/user.h>
+  #include <sys/ptrace.h>
+  #include <string.h>
+  #include <errno.h>
+***************
+*** 7,13 ****
+  #include "cpimage.h"
+  #include "cryopid.h"
+  
+! /*void read_chunk_i387_data(void *fptr, int action)
+  {
+      struct user_i387_struct u;
+      read_bit(fptr, &u, sizeof(struct user_i387_struct));
+--- 6,12 ----
+  #include "cpimage.h"
+  #include "cryopid.h"
+  
+! void read_chunk_i387_data(void *fptr, int action)
+  {
+      struct user_i387_struct u;
+      read_bit(fptr, &u, sizeof(struct user_i387_struct));
+***************
+*** 15,21 ****
+      if (action & ACTION_PRINT)
+  	fprintf(stderr, "i387 state (not currently restored)");
+  
+!     /* FIXME : figure out how to restore i387 state 
+! }*/
+  
+  /* vim:set ts=8 sw=4 noet: */
+--- 14,20 ----
+      if (action & ACTION_PRINT)
+  	fprintf(stderr, "i387 state (not currently restored)");
+  
+!     /* FIXME : figure out how to restore i387 state */
+! }
+  
+  /* vim:set ts=8 sw=4 noet: */
+Only in src/arch-i386/.: .cp_r_i387.c.swp
+Only in src/arch-i386/.: cp_r_i387.o
+diff -cB src/arch-i386/./cp_r_regs.c ../../../cryopid-0.5.9.1/src/arch-i386/./cp_r_regs.c
+*** src/arch-i386/./cp_r_regs.c	2012-08-09 03:11:47.826137899 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./cp_r_regs.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 1,5 ****
+! //#include <linux/user.h>
+! #include <sys/user.h>
+  #include <linux/unistd.h>
+  #include <asm/ldt.h>
+  #include <sys/mman.h>
+--- 1,4 ----
+! #include <linux/user.h>
+  #include <linux/unistd.h>
+  #include <asm/ldt.h>
+  #include <sys/mman.h>
+***************
+*** 29,36 ****
+      *(long*)r->esp = r->eflags;
+      
+      /* set up gs */
+!     if (!emulate_tls && r->xgs != 0) {
+! 	*cp++=0x66;*cp++=0xb8; *(short*)(cp) = r->xgs; cp+=2; /* mov foo, %eax  */
+  	*cp++=0x8e;*cp++=0xe8; /* mov %eax, %gs */
+      }
+  
+--- 28,35 ----
+      *(long*)r->esp = r->eflags;
+      
+      /* set up gs */
+!     if (!emulate_tls && r->gs != 0) {
+! 	*cp++=0x66;*cp++=0xb8; *(short*)(cp) = r->gs; cp+=2; /* mov foo, %eax  */
+  	*cp++=0x8e;*cp++=0xe8; /* mov %eax, %gs */
+      }
+  
+***************
+*** 91,98 ****
+      /* jump back to where we were. */
+      *cp++=0xea;
+      *(unsigned long*)(cp) = r->eip; cp+= 4;
+!     asm("mov %%cs,%w0": "=q"(r->xcs)); /* ensure we use the right CS for the current kernel */
+!     *(unsigned short*)(cp) = r->xcs; cp+= 2; /* jmp cs:foo */
+      syscall_check(
+  	(int)mprotect((void*)TRAMPOLINE_ADDR, PAGE_SIZE, PROT_READ|PROT_EXEC),
+  	    0, "mmap");
+--- 90,97 ----
+      /* jump back to where we were. */
+      *cp++=0xea;
+      *(unsigned long*)(cp) = r->eip; cp+= 4;
+!     asm("mov %%cs,%w0": "=q"(r->cs)); /* ensure we use the right CS for the current kernel */
+!     *(unsigned short*)(cp) = r->cs; cp+= 2; /* jmp cs:foo */
+      syscall_check(
+  	(int)mprotect((void*)TRAMPOLINE_ADDR, PAGE_SIZE, PROT_READ|PROT_EXEC),
+  	    0, "mmap");
+***************
+*** 112,118 ****
+  	fprintf(stderr, "\tesi: 0x%08lx edi: 0x%08lx ebp: 0x%08lx esp: 0x%08lx\n",
+  		user.regs.esi, user.regs.edi, user.regs.ebp, user.regs.esp);
+  	fprintf(stderr, "\t ds: 0x%08x  es: 0x%08x  fs: 0x%08x  gs: 0x%08x\n",
+! 		user.regs.xds, user.regs.xes, user.regs.xfs, user.regs.xgs);
+  	fprintf(stderr, "\teip: 0x%08lx eflags: 0x%08lx",
+  		user.regs.eip, user.regs.eflags);
+      }
+--- 111,117 ----
+  	fprintf(stderr, "\tesi: 0x%08lx edi: 0x%08lx ebp: 0x%08lx esp: 0x%08lx\n",
+  		user.regs.esi, user.regs.edi, user.regs.ebp, user.regs.esp);
+  	fprintf(stderr, "\t ds: 0x%08x  es: 0x%08x  fs: 0x%08x  gs: 0x%08x\n",
+! 		user.regs.ds, user.regs.es, user.regs.fs, user.regs.gs);
+  	fprintf(stderr, "\teip: 0x%08lx eflags: 0x%08lx",
+  		user.regs.eip, user.regs.eflags);
+      }
+Only in src/arch-i386/.: cp_r_regs.o
+diff -cB src/arch-i386/./cp_r_tls.c ../../../cryopid-0.5.9.1/src/arch-i386/./cp_r_tls.c
+*** src/arch-i386/./cp_r_tls.c	2012-08-09 03:25:20.966170046 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./cp_r_tls.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 1,12 ****
+! //#include <linux/user.h>
+! 
+! #include <sys/user.h>
+  #include <linux/unistd.h>
+  #include <signal.h>
+  #include <asm/ldt.h>
+! //#include <asm/ucontext.h>
+! 
+! #include <sys/ucontext.h>
+  #include <sys/mman.h>
+  #include <sys/ptrace.h>
+  #include <asm/ptrace.h>
+--- 1,8 ----
+! #include <linux/user.h>
+  #include <linux/unistd.h>
+  #include <signal.h>
+  #include <asm/ldt.h>
+! #include <asm/ucontext.h>
+  #include <sys/mman.h>
+  #include <sys/ptrace.h>
+  #include <asm/ptrace.h>
+***************
+*** 69,76 ****
+      static int rewrite_len;
+  
+      struct ucontext *uc = (struct ucontext*)ucontext;
+! //    unsigned char *pt = (unsigned char*)uc->uc_mcontext.eip;
+! 	unsigned char *pt = (unsigned char*)uc->uc_mcontext.fpregs;
+  
+      if (rewrite_stage == 1) {
+  	pt = rewrite_start;
+--- 65,71 ----
+      static int rewrite_len;
+  
+      struct ucontext *uc = (struct ucontext*)ucontext;
+!     unsigned char *pt = (unsigned char*)uc->uc_mcontext.eip;
+  
+      if (rewrite_stage == 1) {
+  	pt = rewrite_start;
+***************
+*** 339,346 ****
+  	    old_segvhandler != (void*)SIG_IGN && old_segvhandler != (void*)SIG_DFL)
+  	old_segvhandler(sig, si, ucontext);
+      _exit(88); /* Something significant */
+! //    printf("Unhandled segfault at 0x%08lx!\n", uc->uc_mcontext.eip);
+! printf("Unhandled segfault at 0x%08lx!\n", uc->uc_mcontext.fpregs);
+      raise(SIGSEGV);
+  }
+  
+--- 334,340 ----
+  	    old_segvhandler != (void*)SIG_IGN && old_segvhandler != (void*)SIG_DFL)
+  	old_segvhandler(sig, si, ucontext);
+      _exit(88); /* Something significant */
+!     printf("Unhandled segfault at 0x%08lx!\n", uc->uc_mcontext.eip);
+      raise(SIGSEGV);
+  }
+  
+Only in src/arch-i386/.: cp_r_tls.o
+diff -cB src/arch-i386/./cp_w_i387.c ../../../cryopid-0.5.9.1/src/arch-i386/./cp_w_i387.c
+*** src/arch-i386/./cp_w_i387.c	2013-01-03 23:15:15.161866046 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./cp_w_i387.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 1,6 ****
+! //#include <linux/user.h>
+! #include <sys/user.h>
+! 
+  #include <sys/ptrace.h>
+  #include <string.h>
+  #include <errno.h>
+--- 1,4 ----
+! #include <linux/user.h>
+  #include <sys/ptrace.h>
+  #include <string.h>
+  #include <errno.h>
+***************
+*** 10,28 ****
+  
+  void write_chunk_i387_data(void *fptr, struct cp_i387_data *data)
+  {
+! //    write_bit(fptr, data->i387_data, sizeof(struct user_i387_struct));
+! 	write_bit(fptr, data->i387_data, sizeof(struct user_fpregs_struct));
+  }
+  
+  void fetch_chunks_i387_data(pid_t pid, int flags, struct list *l)
+  {
+      struct cp_chunk *chunk;
+! //    struct user_i387_struct *i387_data;
+! 	struct user_fpregs_struct *i387_data;
+! 
+  
+! //    i387_data = xmalloc(sizeof(struct user_i387_struct));
+! 	i387_data = xmalloc(sizeof(struct user_fpregs_struct));
+      if (ptrace(PTRACE_GETFPREGS, pid, 0, i387_data) == -1) {
+  	bail("ptrace(PTRACE_PEEKDATA): %s", strerror(errno));
+      }
+--- 8,22 ----
+  
+  void write_chunk_i387_data(void *fptr, struct cp_i387_data *data)
+  {
+!     write_bit(fptr, data->i387_data, sizeof(struct user_i387_struct));
+  }
+  
+  void fetch_chunks_i387_data(pid_t pid, int flags, struct list *l)
+  {
+      struct cp_chunk *chunk;
+!     struct user_i387_struct *i387_data;
+  
+!     i387_data = xmalloc(sizeof(struct user_i387_struct));
+      if (ptrace(PTRACE_GETFPREGS, pid, 0, i387_data) == -1) {
+  	bail("ptrace(PTRACE_PEEKDATA): %s", strerror(errno));
+      }
+Only in src/arch-i386/.: cp_w_i387.o
+diff -cB src/arch-i386/./cp_w_regs.c ../../../cryopid-0.5.9.1/src/arch-i386/./cp_w_regs.c
+*** src/arch-i386/./cp_w_regs.c	2012-10-21 15:04:05.542530812 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./cp_w_regs.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 1,6 ****
+! //#include <linux/user.h>
+! #include <sys/user.h>
+! 
+  #include <linux/unistd.h>
+  #include <asm/ldt.h>
+  #include <sys/mman.h>
+--- 1,4 ----
+! #include <linux/user.h>
+  #include <linux/unistd.h>
+  #include <asm/ldt.h>
+  #include <sys/mman.h>
+Only in src/arch-i386/.: cp_w_regs.o
+diff -cB src/arch-i386/./cp_w_tls.c ../../../cryopid-0.5.9.1/src/arch-i386/./cp_w_tls.c
+*** src/arch-i386/./cp_w_tls.c	2012-10-21 15:17:14.042440769 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./cp_w_tls.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 1,12 ****
+! //#include <linux/user.h>
+! #include <sys/user.h>
+! 
+  #include <linux/unistd.h>
+  #include <signal.h>
+  #include <asm/ldt.h>
+! //#include <asm/ucontext.h>
+! #include <sys/ucontext.h>
+! 
+  #include <sys/mman.h>
+  #include <sys/ptrace.h>
+  #include <asm/ptrace.h>
+--- 1,8 ----
+! #include <linux/user.h>
+  #include <linux/unistd.h>
+  #include <signal.h>
+  #include <asm/ldt.h>
+! #include <asm/ucontext.h>
+  #include <sys/mman.h>
+  #include <sys/ptrace.h>
+  #include <asm/ptrace.h>
+Only in src/arch-i386/.: cp_w_tls.o
+diff -cB src/arch-i386/./elfwriter.c ../../../cryopid-0.5.9.1/src/arch-i386/./elfwriter.c
+*** src/arch-i386/./elfwriter.c	2013-01-20 01:33:37.933517089 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./elfwriter.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 1,6 ****
+  #include <elf.h>
+! //#include <asm/page.h>
+! #include <sys/user.h>
+  #include <sys/types.h>
+  #include <sys/stat.h>
+  #include <fcntl.h>
+--- 1,5 ----
+  #include <elf.h>
+! #include <asm/page.h>
+  #include <sys/types.h>
+  #include <sys/stat.h>
+  #include <fcntl.h>
+***************
+*** 123,131 ****
+  	    write_tramp_jump(&tp, e->e_entry);
+  	    e->e_entry = s->sh_addr;
+  	}
+! 	printf("Mohanish %s\n",strtab+s->sh_name);
+  	if (memcmp(strtab+s->sh_name, "cryopid.image", 13) == 0) {
+- 		printf("Mohanish1 %s\n",strtab+s->sh_name);
+  	    /* check the signature from the stub's linker script */
+  	    if (memcmp(stub_start+s->sh_offset, "CPIM", 4) != 0) {
+  		fprintf(stderr, "Found an invalid stub! Still trying...\n");
+--- 122,129 ----
+  	    write_tramp_jump(&tp, e->e_entry);
+  	    e->e_entry = s->sh_addr;
+  	}
+! 
+  	if (memcmp(strtab+s->sh_name, "cryopid.image", 13) == 0) {
+  	    /* check the signature from the stub's linker script */
+  	    if (memcmp(stub_start+s->sh_offset, "CPIM", 4) != 0) {
+  		fprintf(stderr, "Found an invalid stub! Still trying...\n");
+***************
+*** 135,141 ****
+  	    s->sh_info = IMAGE_VERSION;
+  	    *(long*)(stub_start+s->sh_offset) = stub_size;
+  	    got_it = 1;
+- 		
+  	}
+      }
+  
+--- 133,138 ----
+Only in src/arch-i386/.: .elfwriter.c.swp
+Only in src/arch-i386/.: elfwriter.o
+Only in src/arch-i386/.: plt-resolve.o
+diff -cB src/arch-i386/./process.c ../../../cryopid-0.5.9.1/src/arch-i386/./process.c
+*** src/arch-i386/./process.c	2013-01-06 19:10:56.926791440 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./process.c	2006-11-29 20:09:10.000000000 +0900
+***************
+*** 10,19 ****
+  #include <assert.h>
+  #include <netinet/tcp.h>
+  #include <linux/net.h>
+! //#include <asm/page.h>
+! //#include </usr/src/linux-headers-2.6.38-8/arch/x86/include/asm/page.h>
+! //#include <asm/user.h>
+! #include <sys/user.h>
+  
+  #include "linux/tcpcp.h"
+  
+--- 10,17 ----
+  #include <assert.h>
+  #include <netinet/tcp.h>
+  #include <linux/net.h>
+! #include <asm/page.h>
+! #include <asm/user.h>
+  
+  #include "linux/tcpcp.h"
+  
+***************
+*** 134,141 ****
+  static int save_registers(pid_t pid, struct user_regs_struct *r)
+  {
+      if (ptrace(PTRACE_GETREGS, pid, NULL, r) < 0) {
+! 	perror("ptrace getregs ");
+! 	printf("Mohanish:: error no. = %d\n",errno);
+  	return errno;
+      }
+      return 0;
+--- 132,138 ----
+  static int save_registers(pid_t pid, struct user_regs_struct *r)
+  {
+      if (ptrace(PTRACE_GETREGS, pid, NULL, r) < 0) {
+! 	perror("ptrace getregs");
+  	return errno;
+      }
+      return 0;
+***************
+*** 183,189 ****
+      char buf[30];
+      char mode;
+      FILE *f;
+!     snprintf(buf, 30, "/proc/%d/stat", pid);  /*Mohanish:: Original*/
+      f = fopen(buf, "r");
+      if (f == NULL) return -1;
+      fscanf(f, "%*s %*s %c", &mode);
+--- 180,186 ----
+      char buf[30];
+      char mode;
+      FILE *f;
+!     snprintf(buf, 30, "/proc/%d/stat", pid);
+      f = fopen(buf, "r");
+      if (f == NULL) return -1;
+      fscanf(f, "%*s %*s %c", &mode);
+***************
+*** 205,216 ****
+      }
+  
+      if (process_was_stopped)
+- 	printf("Mohanish:: Process stopped\n");
+- 	else{
+- 	printf("Mohanish::Process not stopped\n");
+  	return; /* don't bother waiting for it, we'll just hang */
+! 	}
+! 	printf("Mohanish:: Inside start_ptrace\n");
+      ret = waitpid(pid, &status, 0);
+      if (ret == -1) {
+  	perror("Failed to wait for child");
+--- 202,209 ----
+      }
+  
+      if (process_was_stopped)
+  	return; /* don't bother waiting for it, we'll just hang */
+! 
+      ret = waitpid(pid, &status, 0);
+      if (ret == -1) {
+  	perror("Failed to wait for child");
+***************
+*** 253,259 ****
+      /* this gives us a scribble zone: */
+      fetch_chunks_vma(pid, flags, process_image, bin_offset);
+  
+- 	printf("Mohanish 1\n");
+      if (!scribble_zone) {
+  	fprintf(stderr, "[-] No suitable scribble zone could be found. Aborting.\n");
+  	goto out_ptrace;
+--- 246,251 ----
+Only in src/arch-i386/.: process.o
+Only in src/arch-i386/.: start.o
+diff -cB src/arch-i386/./stub.h ../../../cryopid-0.5.9.1/src/arch-i386/./stub.h
+*** src/arch-i386/./stub.h	2012-10-21 15:28:06.317675232 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./stub.h	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 2,10 ****
+  #define _STUB_H_
+  
+  #include <sys/mman.h>
+! //#include <asm/page.h>
+! #include <sys/user.h>
+! 
+  #include "cryopid.h"
+  
+  static inline void jump_to_trampoline()
+--- 2,8 ----
+  #define _STUB_H_
+  
+  #include <sys/mman.h>
+! #include <asm/page.h>
+  #include "cryopid.h"
+  
+  static inline void jump_to_trampoline()
+Only in src/arch-i386/.: stub-linking_back.x
+diff -cB src/arch-i386/./stub-linking.x ../../../cryopid-0.5.9.1/src/arch-i386/./stub-linking.x
+*** src/arch-i386/./stub-linking.x	2013-02-08 02:41:21.745569100 +0900
+--- ../../../cryopid-0.5.9.1/src/arch-i386/./stub-linking.x	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 175,180 ****
+    .debug_typenames 0 : { *(.debug_typenames) }
+    .debug_varnames  0 : { *(.debug_varnames) }
+    /DISCARD/ : { *(.note.GNU-stack) }
+! /*  cryopid.image (NOLOAD) : { LONG(0x4D495043) }  CPIM */
+!    cryopid.image : { LONG(0x4D495043) }
+  }
+--- 175,179 ----
+    .debug_typenames 0 : { *(.debug_typenames) }
+    .debug_varnames  0 : { *(.debug_varnames) }
+    /DISCARD/ : { *(.note.GNU-stack) }
+!   cryopid.image (NOLOAD) : { LONG(0x4D495043) } /* CPIM */
+  }
+Binary files src/arch-i386/./stub.o and ../../../cryopid-0.5.9.1/src/arch-i386/./stub.o differ

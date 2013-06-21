@@ -1,0 +1,637 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACTION_LOAD	cpimage.h	17;"	d
+ACTION_LOADPRINT	cpimage.h	19;"	d
+ACTION_PRINT	cpimage.h	18;"	d
+ARCH	Makefile	/^ARCH=$(shell arch)$/;"	m
+ARCH	Makefile	/^ARCH=i386$/;"	m
+ARCH_OFORMAT	Makefile	/^ARCH_OFORMAT=elf32-i386$/;"	m
+ARCH_OFORMAT	Makefile	/^ARCH_OFORMAT=elf32-sparc$/;"	m
+ARCH_OFORMAT	Makefile	/^ARCH_OFORMAT=elf64-alpha$/;"	m
+ARCH_OFORMAT	Makefile	/^ARCH_OFORMAT=elf64-x86-64$/;"	m
+ARCH_POISON	arch-i386/arch.h	8;"	d
+ARCH_POISON	arch/arch.h	8;"	d
+CFLAGS	Makefile	/^CFLAGS = -g -Wall -Os $(CFLAGS_GCC_SP) -I. -Iarch -D__$(ARCH)__$/;"	m
+CFLAGS_GCC_SP	Makefile	/^CFLAGS_GCC_SP = -fno-stack-protector$/;"	m
+CHPAX	Makefile	/^CHPAX = \/sbin\/chpax$/;"	m
+COMMON_OBJS	Makefile	/^COMMON_OBJS = common.c arch\/asmfuncs.o$/;"	m
+COMMON_OBJS	arch-i386/Makefile	/^COMMON_OBJS = $/;"	m
+COMMON_OBJS	arch/Makefile	/^COMMON_OBJS = $/;"	m
+CP_CHUNK_FD	cpimage.h	30;"	d
+CP_CHUNK_FD_CONSOLE	cpimage.h	39;"	d
+CP_CHUNK_FD_FIFO	cpimage.h	41;"	d
+CP_CHUNK_FD_FILE	cpimage.h	38;"	d
+CP_CHUNK_FD_MAXFD	cpimage.h	42;"	d
+CP_CHUNK_FD_SOCKET	cpimage.h	40;"	d
+CP_CHUNK_FINAL	cpimage.h	33;"	d
+CP_CHUNK_HEADER	cpimage.h	25;"	d
+CP_CHUNK_I387_DATA	cpimage.h	28;"	d
+CP_CHUNK_MAGIC	cpimage.h	35;"	d
+CP_CHUNK_MISC	cpimage.h	26;"	d
+CP_CHUNK_REGS	cpimage.h	27;"	d
+CP_CHUNK_SIGHAND	cpimage.h	32;"	d
+CP_CHUNK_TLS	cpimage.h	29;"	d
+CP_CHUNK_VMA	cpimage.h	31;"	d
+CRYOPID_VERSION	cryopid.h	11;"	d
+DEPAX	Makefile	/^DEPAX = test ! -x $(CHPAX) || $(CHPAX) -xperms$/;"	m
+FIFO_HASH_SIZE	cp_w_fd_fifo.c	5;"	d	file:
+GB	arch-i386/arch.h	10;"	d
+GB	arch/arch.h	10;"	d
+GET_LIBRARIES_TOO	cpimage.h	21;"	d
+GET_OPEN_FILE_CONTENTS	cpimage.h	22;"	d
+GFunc	gtk_support.c	13;"	d	file:
+GList	gtk_support.c	10;"	d	file:
+GTK_IS_WINDOW	gtk_support.c	14;"	d	file:
+GType	gtk_support.c	11;"	d	file:
+GTypeInstance	gtk_support.c	12;"	d	file:
+GZIP_NO_READER	writer_gzip.c	21;"	d	file:
+GZIP_NO_WRITER	writer_gzip.c	19;"	d	file:
+GdkDisplay	gtk_support.c	5;"	d	file:
+GdkDisplayManager	gtk_support.c	6;"	d	file:
+GdkScreen	gtk_support.c	7;"	d	file:
+GdkWindow	gtk_support.c	9;"	d	file:
+GtkWindow	gtk_support.c	8;"	d	file:
+IMAGE_VERSION	cpimage.h	15;"	d
+IN_LEN	writer_gzip.c	14;"	d	file:
+IN_LEN	writer_lzo.c	14;"	d	file:
+LD_FORMAT	Makefile	/^LD_FORMAT=elf32_sparc$/;"	m
+LD_FORMAT	Makefile	/^LD_FORMAT=elf64alpha$/;"	m
+LD_FORMAT	Makefile	/^LD_FORMAT=elf_i386$/;"	m
+LD_FORMAT	Makefile	/^LD_FORMAT=elf_x86_64$/;"	m
+LIBC	Makefile	/^LIBC = -DPROVIDE_MALLOC -nostdlib -nostartfiles ..\/dietlibc-$(ARCH)\/dietlibc.a -lgcc$/;"	m
+MALLOC_END	arch-i386/cplayout.h	12;"	d
+MALLOC_END	arch/cplayout.h	12;"	d
+MALLOC_START	arch-i386/cplayout.h	11;"	d
+MALLOC_START	arch/cplayout.h	11;"	d
+MAX_COMPRESSED_SIZE	writer_gzip.c	12;"	d	file:
+MAX_COMPRESSED_SIZE	writer_lzo.c	12;"	d	file:
+MAX_SIGS	cryopid.h	52;"	d
+OUT_LEN	writer_gzip.c	16;"	d	file:
+OUT_LEN	writer_lzo.c	16;"	d	file:
+O_DIRECT	cp_r_fd.c	14;"	d	file:
+O_DIRECT	cp_w_fd.c	15;"	d	file:
+O_NOATIME	cp_r_fd.c	17;"	d	file:
+O_NOATIME	cp_w_fd.c	18;"	d	file:
+PROTO_TCP	cp_r_fd_socket.c	15;"	d	file:
+PROTO_TCP	cp_w_fd_socket.c	19;"	d	file:
+PROTO_UDP	cp_r_fd_socket.c	16;"	d	file:
+PROTO_UDP	cp_w_fd_socket.c	20;"	d	file:
+PROTO_UNIX	cp_r_fd_socket.c	14;"	d	file:
+PROTO_UNIX	cp_w_fd_socket.c	18;"	d	file:
+PROTO_X	cp_r_fd_socket.c	17;"	d	file:
+PROTO_X	cp_w_fd_socket.c	21;"	d	file:
+RESUMER_END	arch-i386/cplayout.h	7;"	d
+RESUMER_END	arch/cplayout.h	7;"	d
+RESUMER_START	arch-i386/cplayout.h	6;"	d
+RESUMER_START	arch/cplayout.h	6;"	d
+R_CHUNK_OBJS	Makefile	/^R_CHUNK_OBJS = cpimage_r.o cp_r_fd.o cp_r_fd_console.o cp_r_fd_file.o cp_r_fd_fifo.o cp_r_fd_socket.o cp_r_misc.o cp_r_sighand.o cp_r_vma.o cp_r_header.o arch\/arch_r_objs.o fork2.o$/;"	m
+R_CHUNK_OBJS	arch-i386/Makefile	/^R_CHUNK_OBJS = cp_r_regs.o cp_r_tls.o cp_r_i387.o start.o plt-resolve.o$/;"	m
+R_CHUNK_OBJS	arch/Makefile	/^R_CHUNK_OBJS = cp_r_regs.o cp_r_tls.o cp_r_i387.o start.o plt-resolve.o$/;"	m
+STUBS	Makefile	/^STUBS = $(patsubst %,stub-%,$(STUB_TYPES))$/;"	m
+STUB_TYPES	Makefile	/^STUB_TYPES = gzip # raw buffered lzo$/;"	m
+TARGETS	Makefile	/^TARGETS = freeze fork2_helper$/;"	m
+TCPCP_ACTIVATE	linux/tcpcp.h	27;"	d
+TCPCP_CONG_DEFAULT	tcpcp.h	/^    TCPCP_CONG_DEFAULT = 0,	\/* default mode; no privileges required *\/$/;"	e	enum:tcpcp_cong_mode
+TCPCP_CONG_KEEP	tcpcp.h	/^    TCPCP_CONG_KEEP,		\/* use data in ICI; will require CAP_NET_RAW *\/$/;"	e	enum:tcpcp_cong_mode
+TCPCP_CONG_NEW	tcpcp.h	/^    TCPCP_CONG_NEW,		\/* slow start; may require CAP_NET_RAW *\/$/;"	e	enum:tcpcp_cong_mode
+TCPCP_H	tcpcp.h	10;"	d
+TCPCP_ICIF_USEPERF	linux/tcpcp.h	/^	TCPCP_ICIF_USEPERF = 1,	\/* use perf. data (tcpcp_set_cong) *\/$/;"	e	enum:__anon1
+TCP_CP_FN	linux/tcpcp.h	23;"	d
+TCP_ICI	linux/tcpcp.h	22;"	d
+TCP_MAXICISIZE	linux/tcpcp.h	21;"	d
+TOP_OF_STACK	arch-i386/cplayout.h	9;"	d
+TOP_OF_STACK	arch/cplayout.h	9;"	d
+TPCPC_ICIE_BUF_OOO	linux/tcpcp.h	/^	TPCPC_ICIE_BUF_OOO = 2,	\/* out of order buffer (only TCP segment) *\/$/;"	e	enum:__anon3
+TPCPC_ICIE_BUF_SND	linux/tcpcp.h	/^	TPCPC_ICIE_BUF_SND = 1,	\/* send buffer (only TCP segment, no IP) *\/$/;"	e	enum:__anon3
+TRAMPOLINE_ADDR	arch-i386/cplayout.h	4;"	d
+TRAMPOLINE_ADDR	arch/cplayout.h	4;"	d
+USE_GTK	Makefile	/^USE_GTK=n$/;"	m
+USE_TCPCP	Makefile	/^USE_TCPCP=n$/;"	m
+USE_TCPCP	Makefile	/^USE_TCPCP=y$/;"	m
+W_CHUNK_OBJS	Makefile	/^W_CHUNK_OBJS = cpimage_w.o cp_w_fd.o cp_w_fd_console.o cp_w_fd_file.o cp_w_fd_fifo.o cp_w_fd_socket.o cp_w_misc.o cp_w_sighand.o cp_w_vma.o cp_w_header.o arch\/arch_w_objs.o list.o $/;"	m
+W_CHUNK_OBJS	arch-i386/Makefile	/^W_CHUNK_OBJS = cp_w_regs.o cp_w_tls.o cp_w_i387.o$/;"	m
+W_CHUNK_OBJS	arch/Makefile	/^W_CHUNK_OBJS = cp_w_regs.o cp_w_tls.o cp_w_i387.o$/;"	m
+_ARCH_H_	arch-i386/arch.h	2;"	d
+_ARCH_H_	arch/arch.h	2;"	d
+_ARCH_NSIG	arch-i386/arch.h	12;"	d
+_ARCH_NSIG	arch/arch.h	12;"	d
+_ARCH_NSIG_BPW	arch-i386/arch.h	13;"	d
+_ARCH_NSIG_BPW	arch/arch.h	13;"	d
+_ARCH_NSIG_WORDS	arch-i386/arch.h	14;"	d
+_ARCH_NSIG_WORDS	arch/arch.h	14;"	d
+_CPIMAGE_H_	cpimage.h	2;"	d
+_CPLAYOUT_H_	arch-i386/cplayout.h	2;"	d
+_CPLAYOUT_H_	arch/cplayout.h	2;"	d
+_CRYOPID_H_	cryopid.h	2;"	d
+_LARGEFILE64_SOURCE	arch-i386/process.c	1;"	d	file:
+_LARGEFILE64_SOURCE	arch/process.c	1;"	d	file:
+_LARGEFILE64_SOURCE	fork2_helper.c	6;"	d	file:
+_LINUX_TCPCP_H	linux/tcpcp.h	8;"	d
+_LIST_H_	list.h	2;"	d
+_PROCESS_H_	process.h	2;"	d
+_STUB_H_	arch-i386/stub.h	2;"	d
+_STUB_H_	arch/stub.h	2;"	d
+__malloc_initialize_hook	common.c	/^void (*__malloc_initialize_hook) (void) = cp_malloc_init_hook;$/;"	v
+__pad	linux/tcpcp.h	/^	uint8_t __pad;                                                     \/**\/$/;"	m	struct:tcpcp_icie_buf
+__pad	linux/tcpcp.h	/^	uint8_t __pad;$/;"	m	struct:tcpcp_icie_fixgen
+__pad1	linux/tcpcp.h	/^	uint8_t __pad1;$/;"	m	struct:tcpcp_icie_vargen
+__pad1	linux/tcpcp.h	/^	uint8_t __pad1;$/;"	m	struct:tcpcp_icie_version
+__pad2	linux/tcpcp.h	/^	uint16_t __pad2;$/;"	m	struct:tcpcp_icie_version
+__pad2	linux/tcpcp.h	/^	uint8_t __pad2;$/;"	m	struct:tcpcp_icie_vargen
+__pad3	linux/tcpcp.h	/^	uint8_t __pad3;$/;"	m	struct:tcpcp_icie_vargen
+__remote_syscall	arch-i386/process.c	/^static inline unsigned long __remote_syscall(pid_t pid,$/;"	f	file:
+__remote_syscall	arch/process.c	/^static inline unsigned long __remote_syscall(pid_t pid,$/;"	f	file:
+__rsyscall0	arch-i386/process.c	335;"	d	file:
+__rsyscall0	arch/process.c	335;"	d	file:
+__rsyscall1	arch-i386/process.c	341;"	d	file:
+__rsyscall1	arch/process.c	341;"	d	file:
+__rsyscall2	arch-i386/process.c	348;"	d	file:
+__rsyscall2	arch/process.c	348;"	d	file:
+__rsyscall3	arch-i386/process.c	356;"	d	file:
+__rsyscall3	arch/process.c	356;"	d	file:
+__rsyscall4	arch-i386/process.c	365;"	d	file:
+__rsyscall4	arch/process.c	365;"	d	file:
+__rsyscall5	arch-i386/process.c	375;"	d	file:
+__rsyscall5	arch/process.c	375;"	d	file:
+_start	arch-i386/start.S	/^_start:$/;"	l
+_start	arch/start.S	/^_start:$/;"	l
+action	stub_common.c	/^int action = ACTION_LOAD;$/;"	v
+am_leader	cpimage.h	/^    int am_leader;$/;"	m	struct:cp_header
+arch_sigset_t	arch-i386/arch.h	/^} arch_sigset_t;$/;"	t	typeref:struct:__anon9
+arch_sigset_t	arch/arch.h	/^} arch_sigset_t;$/;"	t	typeref:struct:__anon8
+assert	cryopid.h	24;"	d
+assert	cryopid.h	26;"	d
+backup_page	arch-i386/process.c	/^char* backup_page(pid_t target, void* addr)$/;"	f
+backup_page	arch/process.c	/^char* backup_page(pid_t target, void* addr)$/;"	f
+bail	cryopid.h	17;"	d
+buf	linux/tcpcp.h	/^	struct tcpcp_icie_buf buf[0];$/;"	m	struct:tcpcp_ici	typeref:struct:tcpcp_ici::tcpcp_icie_buf
+buf_data	writer_buffered.c	/^struct buf_data {$/;"	s	file:
+buf_dup2	writer_buffered.c	/^static void buf_dup2(void *fptr, int newfd)$/;"	f	file:
+buf_finish	writer_buffered.c	/^static void buf_finish(void *fptr)$/;"	f	file:
+buf_ftell	writer_buffered.c	/^static long buf_ftell(void *fptr)$/;"	f	file:
+buf_hdr_size	linux/tcpcp.h	/^	uint16_t buf_hdr_size;	\/* sizeof(struct tcpcp_icie_buf) *\/$/;"	m	struct:tcpcp_icie_version
+buf_init	writer_buffered.c	/^static void *buf_init(int fd, int mode)$/;"	f	file:
+buf_ops	writer_buffered.c	/^struct stream_ops buf_ops = {$/;"	v	typeref:struct:stream_ops
+buf_read	writer_buffered.c	/^static int buf_read(void *fptr, void *buf, int len)$/;"	f	file:
+buf_write	writer_buffered.c	/^static int buf_write(void *fptr, void *buf, int len)$/;"	f	file:
+buffer	writer_buffered.c	/^    char buffer[BUFSIZ];$/;"	m	struct:buf_data	file:
+bytesin	writer_gzip.c	/^    int bytesin, bytesout; \/* for statistics *\/$/;"	m	struct:gzip_data	file:
+bytesin	writer_lzo.c	/^    int bytesin, bytesout; \/* for statistics *\/$/;"	m	struct:lzo_data	file:
+bytesout	writer_gzip.c	/^    int bytesin, bytesout; \/* for statistics *\/$/;"	m	struct:gzip_data	file:
+bytesout	writer_lzo.c	/^    int bytesin, bytesout; \/* for statistics *\/$/;"	m	struct:lzo_data	file:
+c_stream	writer_gzip.c	/^    z_stream c_stream;$/;"	m	struct:gzip_data	file:
+check_ici_v0	tcpcp_r.c	/^static int check_ici_v0(const struct tcpcp_ici *ici)$/;"	f	file:
+checksum	common.c	/^unsigned int checksum(char *ptr, int len, unsigned int start)$/;"	f
+checksum	cpimage.h	/^    unsigned int checksum;$/;"	m	struct:cp_vma
+children_offsets	cpimage.h	/^    off_t *children_offsets;$/;"	m	struct:cp_header
+clone_flags	cpimage.h	/^    int clone_flags;$/;"	m	struct:cp_header
+close_on_exec	cpimage.h	/^    int close_on_exec;$/;"	m	struct:cp_fd
+cmdline	cpimage.h	/^    char *cmdline;$/;"	m	struct:cp_misc
+cong	linux/tcpcp.h	/^	struct tcpcp_icie_cong cong; \/* congestion avoidance data *\/$/;"	m	struct:tcpcp_ici	typeref:struct:tcpcp_ici::tcpcp_icie_cong
+console	cpimage.h	/^	struct cp_console console;$/;"	m	union:cp_fd::__anon6	typeref:struct:cp_fd::__anon6::cp_console
+console_fd	cp_r_fd.c	/^int console_fd;$/;"	v
+contents	cpimage.h	/^    char *contents;$/;"	m	struct:cp_file
+cp_chunk	cpimage.h	/^struct cp_chunk {$/;"	s
+cp_console	cpimage.h	/^struct cp_console {$/;"	s
+cp_fd	cpimage.h	/^struct cp_fd {$/;"	s
+cp_fifo	cpimage.h	/^struct cp_fifo {$/;"	s
+cp_file	cpimage.h	/^struct cp_file {$/;"	s
+cp_free_hook	common.c	/^static void cp_free_hook(void *ptr, const void *caller)$/;"	f	file:
+cp_header	cpimage.h	/^struct cp_header {$/;"	s
+cp_i387_data	cpimage.h	/^struct cp_i387_data {$/;"	s
+cp_malloc_hook	common.c	/^static void *cp_malloc_hook(size_t size, const void *caller)$/;"	f	file:
+cp_malloc_init_hook	common.c	/^static void cp_malloc_init_hook()$/;"	f	file:
+cp_misc	cpimage.h	/^struct cp_misc {$/;"	s
+cp_regs	cpimage.h	/^struct cp_regs {$/;"	s
+cp_sigaction	arch-i386/arch.h	47;"	d
+cp_sigaction	arch/arch.h	47;"	d
+cp_sighand	cpimage.h	/^struct cp_sighand {$/;"	s
+cp_socket	cpimage.h	/^struct cp_socket {$/;"	s
+cp_socket_tcp	cpimage.h	/^struct cp_socket_tcp {$/;"	s
+cp_socket_udp	cpimage.h	/^struct cp_socket_udp {$/;"	s
+cp_socket_unix	cpimage.h	/^struct cp_socket_unix {$/;"	s
+cp_tls	cpimage.h	/^struct cp_tls {$/;"	s
+cp_vma	cpimage.h	/^struct cp_vma {$/;"	s
+cryopid_migrate_gtk_windows	gtk_support.c	/^void cryopid_migrate_gtk_windows()$/;"	f
+cwd	cpimage.h	/^    char *cwd;$/;"	m	struct:cp_misc
+data	cpimage.h	/^    void* data; \/* length end-start *\/ \/* in file, simply true if is data *\/$/;"	m	struct:cp_vma
+data	linux/tcpcp.h	/^	uint8_t data[0];	\/* data, padded to multiple of 4 bytes *\/$/;"	m	struct:tcpcp_icie_buf
+debug	cryopid.h	13;"	d
+declare_writer	cryopid.h	55;"	d
+declare_writer	cryopid.h	57;"	d
+deleted	cpimage.h	/^    int deleted;$/;"	m	struct:cp_file
+dev	cpimage.h	/^    int dev;$/;"	m	struct:cp_vma
+discard_bit	cpimage_r.c	/^void discard_bit(void *fptr, int length)$/;"	f
+display_environ	gtk_support.c	/^char display_environ[80];$/;"	v
+do_pause	stub_common.c	/^int do_pause = 0;$/;"	v
+dump_only	stub_common.c	/^int dump_only = 0;$/;"	v
+dup2	cpimage.h	/^    void (*dup2)(void *data, int newfd);$/;"	m	struct:stream_ops
+emulate_tls	arch-i386/cp_r_tls.c	/^int emulate_tls = 0;$/;"	v
+emulate_tls	arch/cp_r_tls.c	/^int emulate_tls = 0;$/;"	v
+end_ptrace	arch-i386/process.c	/^static void end_ptrace(pid_t pid)$/;"	f	file:
+end_ptrace	arch/process.c	/^static void end_ptrace(pid_t pid)$/;"	f	file:
+env	cpimage.h	/^    char *env;$/;"	m	struct:cp_misc
+extra_prot_flags	cp_r_vma.c	/^int extra_prot_flags;$/;"	v
+f	writer_buffered.c	/^    FILE* f; \/* So we can use buffering *\/$/;"	m	struct:buf_data	file:
+fcntl_status	cpimage.h	/^    int fcntl_status;$/;"	m	struct:cp_fd
+fd	cp_w_fd_fifo.c	/^    pid_t pid[2]; int fd[2];$/;"	m	struct:__anon4	file:
+fd	cpimage.h	/^	struct cp_fd fd;$/;"	m	union:cp_chunk::__anon7	typeref:struct:cp_chunk::__anon7::cp_fd
+fd	cpimage.h	/^    int fd;$/;"	m	struct:cp_fd
+fd	writer_buffered.c	/^    int fd;$/;"	m	struct:buf_data	file:
+fd	writer_gzip.c	/^    int fd;$/;"	m	struct:gzip_data	file:
+fd	writer_lzo.c	/^    int fd;$/;"	m	struct:lzo_data	file:
+fd	writer_raw.c	/^    int fd;$/;"	m	struct:raw_data	file:
+fetch_chunk_misc	cp_w_misc.c	/^void fetch_chunk_misc(void *fptr, int flags, struct list *process_image)$/;"	f
+fetch_chunks_fd	cp_w_fd.c	/^void fetch_chunks_fd(pid_t pid, int flags, struct list *l)$/;"	f
+fetch_chunks_header	cp_w_header.c	/^void fetch_chunks_header(pid_t pid, int flags, struct list *l)$/;"	f
+fetch_chunks_i387_data	arch-i386/cp_w_i387.c	/^void fetch_chunks_i387_data(pid_t pid, int flags, struct list *l)$/;"	f
+fetch_chunks_i387_data	arch/cp_w_i387.c	/^void fetch_chunks_i387_data(pid_t pid, int flags, struct list *l)$/;"	f
+fetch_chunks_regs	arch-i386/cp_w_regs.c	/^void fetch_chunks_regs(pid_t pid, int flags, struct list *l, int stopped)$/;"	f
+fetch_chunks_regs	arch/cp_w_regs.c	/^void fetch_chunks_regs(pid_t pid, int flags, struct list *l, int stopped)$/;"	f
+fetch_chunks_sighand	cp_w_sighand.c	/^void fetch_chunks_sighand(pid_t pid, int flags, struct list *l)$/;"	f
+fetch_chunks_tls	arch-i386/cp_w_tls.c	/^void fetch_chunks_tls(pid_t pid, int flags, struct list *l)$/;"	f
+fetch_chunks_tls	arch/cp_w_tls.c	/^void fetch_chunks_tls(pid_t pid, int flags, struct list *l)$/;"	f
+fetch_chunks_vma	cp_w_vma.c	/^void fetch_chunks_vma(pid_t pid, int flags, struct list *l, long *bin_offset)$/;"	f
+fetch_fd_console	cp_w_fd_console.c	/^void fetch_fd_console(pid_t pid, int flags, int fd, struct cp_console *console)$/;"	f
+fetch_fd_fifo	cp_w_fd_fifo.c	/^void fetch_fd_fifo(pid_t pid, int flags, int fd, int inode,$/;"	f
+fetch_fd_file	cp_w_fd_file.c	/^void fetch_fd_file(pid_t pid, int flags, int fd, int inode, char *fd_path,$/;"	f
+fetch_fd_socket	cp_w_fd_socket.c	/^void fetch_fd_socket(pid_t pid, int flags, int fd, int inode,$/;"	f
+fifo	cpimage.h	/^	struct cp_fifo fifo;$/;"	m	union:cp_fd::__anon6	typeref:struct:cp_fd::__anon6::cp_fifo
+fifo_hash	cp_w_fd_fifo.c	/^} fifo_hash[FIFO_HASH_SIZE] = {};$/;"	v	typeref:struct:__anon4	file:
+fifo_hash_add	cp_w_fd_fifo.c	/^static int fifo_hash_add(int inode, pid_t pid, int fd) {$/;"	f	file:
+file	cpimage.h	/^	struct cp_file file;$/;"	m	union:cp_fd::__anon6	typeref:struct:cp_fd::__anon6::cp_file
+filename	cpimage.h	/^    char *filename;$/;"	m	struct:cp_file
+filename	cpimage.h	/^    char *filename;$/;"	m	struct:cp_vma
+find_linkmap	arch-i386/plt-resolve.c	/^void *find_linkmap(void *elf_hdr)$/;"	f
+find_linkmap	arch/plt-resolve.c	/^void *find_linkmap(void *elf_hdr)$/;"	f
+find_symbol	gtk_support.c	31;"	d	file:
+find_symbol_noprefix	gtk_support.c	35;"	d	file:
+find_top_of_stack	arch-i386/stub.h	/^static inline void* find_top_of_stack()$/;"	f
+find_top_of_stack	arch/stub.h	/^static inline void* find_top_of_stack()$/;"	f
+finish	cpimage.h	/^    void (*finish)(void *data);$/;"	m	struct:stream_ops
+fixgen	linux/tcpcp.h	/^	struct tcpcp_icie_fixgen fixgen; \/* fixed general data *\/$/;"	m	struct:tcpcp_ici	typeref:struct:tcpcp_ici::tcpcp_icie_fixgen
+flags	cpimage.h	/^    int flags;$/;"	m	struct:cp_vma
+flags	linux/tcpcp.h	/^	uint16_t flags;		\/* see TCPCP_ICIF_*, below *\/$/;"	m	struct:tcpcp_icie_version
+fork2	fork2.c	/^int fork2(pid_t pid)$/;"	f
+free	common.c	/^void free(void *mem) { return cp_free_hook(mem, NULL); }$/;"	f
+ftell	cpimage.h	/^    long (*ftell)(void *data);$/;"	m	struct:stream_ops
+get_file_size	cp_w_fd_file.c	/^static int get_file_size(pid_t pid, int fd)$/;"	f	file:
+get_last_pid	fork2_helper.c	/^int get_last_pid()$/;"	f
+get_last_pid_location	fork2_helper.c	/^static unsigned long get_last_pid_location()$/;"	f	file:
+get_one_vma	cp_w_vma.c	/^static int get_one_vma(pid_t pid, char* line, struct cp_vma *vma,$/;"	f	file:
+get_process	arch-i386/process.c	/^void get_process(pid_t pid, int flags, struct list *process_image, long *bin_offset)$/;"	f
+get_process	arch/process.c	/^void get_process(pid_t pid, int flags, struct list *process_image, long *bin_offset)$/;"	f
+get_signal_handler	cp_w_sighand.c	/^static int get_signal_handler(pid_t pid, int sig, struct k_sigaction *ksa)$/;"	f	file:
+get_socket_info	cp_w_fd_socket.c	/^static int get_socket_info(int inode, struct unix_sock_info_t *info)$/;"	f	file:
+get_task_size	arch-i386/arch.h	/^static inline unsigned long get_task_size()$/;"	f
+get_task_size	arch/arch.h	/^static inline unsigned long get_task_size()$/;"	f
+get_tcp_socket	cp_w_fd_socket.c	/^static int get_tcp_socket(struct cp_socket_tcp *tcp, pid_t pid, int fd, int inode)$/;"	f	file:
+get_term_dev	cp_w_fd.c	/^static dev_t get_term_dev(pid_t pid)$/;"	f	file:
+get_termios	cp_w_fd_console.c	/^static int get_termios(pid_t pid, int fd, struct termios *t)$/;"	f	file:
+get_unix_socket	cp_w_fd_socket.c	/^static int get_unix_socket(struct cp_socket_unix *u, pid_t pid, int fd,$/;"	f	file:
+gid	cpimage.h	/^    gid_t gid;$/;"	m	struct:cp_header
+gtk_can_close_displays	gtk_support.c	/^int gtk_can_close_displays = 0;$/;"	v
+gzip_compress_chunk	writer_gzip.c	/^static void gzip_compress_chunk(void *fptr, int flush)$/;"	f	file:
+gzip_data	writer_gzip.c	/^struct gzip_data {$/;"	s	file:
+gzip_ops	writer_gzip.c	/^struct stream_ops gzip_ops = {$/;"	v	typeref:struct:stream_ops
+gzip_uncompress_chunk	writer_gzip.c	/^static void gzip_uncompress_chunk(void *fptr)$/;"	f	file:
+gzip_writer_dup2	writer_gzip.c	/^static void gzip_writer_dup2(void *fptr, int newfd)$/;"	f	file:
+gzip_writer_finish	writer_gzip.c	/^static void gzip_writer_finish(void *fptr)$/;"	f	file:
+gzip_writer_ftell	writer_gzip.c	/^static long gzip_writer_ftell(void *fptr)$/;"	f	file:
+gzip_writer_init	writer_gzip.c	/^static void *gzip_writer_init(int fd, int mode)$/;"	f	file:
+gzip_writer_read	writer_gzip.c	/^static int gzip_writer_read(void *fptr, void *buf, int len)$/;"	f	file:
+gzip_writer_write	writer_gzip.c	/^static int gzip_writer_write(void *fptr, void *buf, int len)$/;"	f	file:
+hash_fifo	cp_w_fd_fifo.c	/^static inline int hash_fifo(int inode) {$/;"	f	file:
+have_data	cpimage.h	/^    char have_data;$/;"	m	struct:cp_vma
+head	list.h	/^	struct item *head, *tail; $/;"	m	struct:list	typeref:struct:list::item
+i387_data	cpimage.h	/^	struct cp_i387_data i387_data;$/;"	m	union:cp_chunk::__anon7	typeref:struct:cp_chunk::__anon7::cp_i387_data
+i387_data	cpimage.h	/^    struct user_i387_struct* i387_data;$/;"	m	struct:cp_i387_data	typeref:struct:cp_i387_data::user_i387_struct
+ici	cpimage.h	/^    void *ici; \/* If the system supports tcpcp. *\/$/;"	m	struct:cp_socket_tcp
+ici_hdr_size	linux/tcpcp.h	/^	uint16_t ici_hdr_size;	\/* sizeof(struct tcpcp_ici) *\/$/;"	m	struct:tcpcp_icie_version
+ici_length	linux/tcpcp.h	/^	uint32_t ici_length;	\/* total length of ICI *\/$/;"	m	struct:tcpcp_ici
+id	linux/tcpcp.h	/^	struct tcpcp_icie_id id; \/* globally unique TCP connection ID *\/$/;"	m	struct:tcpcp_ici	typeref:struct:tcpcp_ici::tcpcp_icie_id
+image_fd	stub_common.c	/^static int image_fd, real_fd;$/;"	v	file:
+in	writer_gzip.c	/^    unsigned char *in, *out;$/;"	m	struct:gzip_data	file:
+in	writer_lzo.c	/^    lzo_byte *in, *out, *wrkmem;$/;"	m	struct:lzo_data	file:
+in_len	writer_gzip.c	/^    int in_len, in_used, out_len;$/;"	m	struct:gzip_data	file:
+in_len	writer_lzo.c	/^    lzo_uint in_len, in_used, out_len;$/;"	m	struct:lzo_data	file:
+in_used	writer_gzip.c	/^    int in_len, in_used, out_len;$/;"	m	struct:gzip_data	file:
+in_used	writer_lzo.c	/^    lzo_uint in_len, in_used, out_len;$/;"	m	struct:lzo_data	file:
+info	cryopid.h	15;"	d
+init	cpimage.h	/^    void *(*init)(int fd, int mode);$/;"	m	struct:stream_ops
+inode	cp_w_fd_fifo.c	/^    ino_t inode;$/;"	m	struct:__anon4	file:
+inode	cpimage.h	/^    int inode;$/;"	m	struct:cp_vma
+install_tls_segv_handler	arch-i386/cp_r_tls.c	/^void install_tls_segv_handler()$/;"	f
+install_tls_segv_handler	arch/cp_r_tls.c	/^void install_tls_segv_handler()$/;"	f
+ip	linux/tcpcp.h	/^	} ip;$/;"	m	struct:tcpcp_icie_id	typeref:union:tcpcp_icie_id::__anon2
+ip_dst	linux/tcpcp.h	/^	uint32_t ip_dst;	\/* destination IP address *\/$/;"	m	struct:tcpcp_icie_id4
+ip_src	linux/tcpcp.h	/^	uint32_t ip_src;	\/* source IP address *\/$/;"	m	struct:tcpcp_icie_id4
+ip_version	linux/tcpcp.h	/^	uint8_t ip_version;	\/* IP version *\/$/;"	m	struct:tcpcp_icie_version
+is_a_syscall	arch-i386/process.c	/^int is_a_syscall(unsigned long inst, int canonical)$/;"	f
+is_a_syscall	arch/process.c	/^int is_a_syscall(unsigned long inst, int canonical)$/;"	f
+is_heap	cpimage.h	/^    char is_heap;$/;"	m	struct:cp_vma
+is_in_syscall	arch-i386/process.c	/^int is_in_syscall(pid_t pid, struct user *user)$/;"	f
+is_in_syscall	arch/process.c	/^int is_in_syscall(pid_t pid, struct user *user)$/;"	f
+isdigit	cp_w_fd_socket.c	16;"	d	file:
+item	list.h	/^struct item {$/;"	s
+jump_to_trampoline	arch-i386/stub.h	/^static inline void jump_to_trampoline()$/;"	f
+jump_to_trampoline	arch/stub.h	/^static inline void jump_to_trampoline()$/;"	f
+k_sigaction	arch-i386/arch.h	/^struct k_sigaction {$/;"	s
+k_sigaction	arch/arch.h	/^struct k_sigaction {$/;"	s
+ksa	cpimage.h	/^    struct k_sigaction *ksa;$/;"	m	struct:cp_sighand	typeref:struct:cp_sighand::k_sigaction
+length	cpimage.h	/^    unsigned long start, length;$/;"	m	struct:cp_vma
+length	linux/tcpcp.h	/^	uint16_t length;	\/* segment data length                       *\/$/;"	m	struct:tcpcp_icie_buf
+list	list.h	/^struct list {$/;"	s
+list_append	list.c	/^void list_append(struct list *l, void *p)$/;"	f
+list_init	list.h	13;"	d
+list_insert	list.c	/^void list_insert(struct list *l, void *p)$/;"	f
+listening	cp_w_fd_socket.c	/^    int listening;$/;"	m	struct:unix_sock_info_t	file:
+listening	cpimage.h	/^    int type, listening;$/;"	m	struct:cp_socket_unix
+load_chunk_regs	arch-i386/cp_r_regs.c	/^static void load_chunk_regs(struct user *user, int stopped)$/;"	f	file:
+load_chunk_regs	arch/cp_r_regs.c	/^static void load_chunk_regs(struct user *user, int stopped)$/;"	f	file:
+lzo_compress_chunk	writer_lzo.c	/^static void lzo_compress_chunk(void *fptr)$/;"	f	file:
+lzo_data	writer_lzo.c	/^struct lzo_data {$/;"	s	file:
+lzo_ops	writer_lzo.c	/^struct stream_ops lzo_ops = {$/;"	v	typeref:struct:stream_ops
+lzo_read_uncompressed	writer_lzo.c	/^static void lzo_read_uncompressed(void *fptr)$/;"	f	file:
+lzo_uncompress_chunk	writer_lzo.c	/^static void lzo_uncompress_chunk(void *fptr)$/;"	f	file:
+lzo_write_compressed	writer_lzo.c	/^static void lzo_write_compressed(void *fptr)$/;"	f	file:
+lzo_writer_dup2	writer_lzo.c	/^static void lzo_writer_dup2(void *fptr, int newfd)$/;"	f	file:
+lzo_writer_finish	writer_lzo.c	/^static void lzo_writer_finish(void *fptr)$/;"	f	file:
+lzo_writer_ftell	writer_lzo.c	/^static long lzo_writer_ftell(void *fptr)$/;"	f	file:
+lzo_writer_init	writer_lzo.c	/^static void *lzo_writer_init(int fd, int mode)$/;"	f	file:
+lzo_writer_read	writer_lzo.c	/^static int lzo_writer_read(void *fptr, void *buf, int len)$/;"	f	file:
+lzo_writer_write	writer_lzo.c	/^static int lzo_writer_write(void *fptr, void *buf, int len)$/;"	f	file:
+main	fork2_helper.c	/^int main(int argc, char **argv)$/;"	f
+main	freeze.c	/^int main(int argc, char** argv)$/;"	f
+main	stub_common.c	/^int main(int argc, char**argv, char **envp)$/;"	f
+major	linux/tcpcp.h	/^	uint8_t major;		\/* incompatible structure revision *\/$/;"	m	struct:tcpcp_icie_version
+malloc	common.c	/^void *malloc(size_t size) { return cp_malloc_hook(size, NULL); }$/;"	f
+memcpy_from_target	arch-i386/process.c	/^int memcpy_from_target(pid_t pid, void* dest, const void* src, size_t n)$/;"	f
+memcpy_from_target	arch/process.c	/^int memcpy_from_target(pid_t pid, void* dest, const void* src, size_t n)$/;"	f
+memcpy_into_target	arch-i386/process.c	/^int memcpy_into_target(pid_t pid, void* dest, const void* src, size_t n)$/;"	f
+memcpy_into_target	arch/process.c	/^int memcpy_into_target(pid_t pid, void* dest, const void* src, size_t n)$/;"	f
+minor	linux/tcpcp.h	/^	uint8_t minor;		\/* compatible structure extension *\/$/;"	m	struct:tcpcp_icie_version
+misc	cpimage.h	/^	struct cp_misc misc;$/;"	m	union:cp_chunk::__anon7	typeref:struct:cp_chunk::__anon7::cp_misc
+mode	cpimage.h	/^    int mode;$/;"	m	struct:cp_fd
+mode	writer_buffered.c	/^    char *mode;$/;"	m	struct:buf_data	file:
+mode	writer_gzip.c	/^    int mode;$/;"	m	struct:gzip_data	file:
+mode	writer_lzo.c	/^    int mode;$/;"	m	struct:lzo_data	file:
+mode	writer_raw.c	/^    int mode;$/;"	m	struct:raw_data	file:
+move_fds	cp_r_fd_fifo.c	/^static void move_fds(int fds[2], int rfd, int wfd)$/;"	f	file:
+n_children	cpimage.h	/^    int n_children;$/;"	m	struct:cp_header
+need_gtk	gtk_support.c	/^int need_gtk = 0;$/;"	v
+next	list.h	/^	struct item *next;$/;"	m	struct:item	typeref:struct:item::item
+offset	cpimage.h	/^    off_t offset;$/;"	m	struct:cp_fd
+offset	writer_buffered.c	/^    int offset;$/;"	m	struct:buf_data	file:
+offset	writer_gzip.c	/^    int offset;$/;"	m	struct:gzip_data	file:
+offset	writer_lzo.c	/^    int offset;$/;"	m	struct:lzo_data	file:
+offset	writer_raw.c	/^    int offset;$/;"	m	struct:raw_data	file:
+old_malloc_hook	common.c	/^static void* (*old_malloc_hook)(size_t, const void *);$/;"	v	file:
+old_segvhandler	arch-i386/cp_r_tls.c	/^static void (*old_segvhandler)(int, siginfo_t*, void*);$/;"	v	file:
+old_segvhandler	arch/cp_r_tls.c	/^static void (*old_segvhandler)(int, siginfo_t*, void*);$/;"	v	file:
+opaque	cpimage.h	/^    void *opaque; \/* For arch-specific data *\/$/;"	m	struct:cp_regs
+open_self	stub_common.c	/^static int open_self()$/;"	f	file:
+out	writer_gzip.c	/^    unsigned char *in, *out;$/;"	m	struct:gzip_data	file:
+out	writer_lzo.c	/^    lzo_byte *in, *out, *wrkmem;$/;"	m	struct:lzo_data	file:
+out_len	writer_gzip.c	/^    int in_len, in_used, out_len;$/;"	m	struct:gzip_data	file:
+out_len	writer_lzo.c	/^    lzo_uint in_len, in_used, out_len;$/;"	m	struct:lzo_data	file:
+p	list.h	/^	void *p;$/;"	m	struct:item
+path	cp_w_fd_socket.c	/^    char path[108]; \/* As defined in sys\/un.h *\/$/;"	m	struct:unix_sock_info_t	file:
+peername	cpimage.h	/^    struct sockaddr_un peername;$/;"	m	struct:cp_socket_unix	typeref:struct:cp_socket_unix::sockaddr_un
+pg_off	cpimage.h	/^    long pg_off;$/;"	m	struct:cp_vma
+pgid	cpimage.h	/^    pid_t pid, tid, pgid, sid;$/;"	m	struct:cp_header
+pid	cp_w_fd_fifo.c	/^    pid_t pid[2]; int fd[2];$/;"	m	struct:__anon4	file:
+pid	cpimage.h	/^    pid_t pid, tid, pgid, sid;$/;"	m	struct:cp_header
+plt_resolve	arch-i386/plt-resolve.c	/^void *plt_resolve(void *l, char *what)$/;"	f
+plt_resolve	arch/plt-resolve.c	/^void *plt_resolve(void *l, char *what)$/;"	f
+print_status	supervisor.c	/^void print_status(FILE* f, int status)$/;"	f
+process_is_stopped	arch-i386/process.c	/^static int process_is_stopped(pid_t pid)$/;"	f	file:
+process_is_stopped	arch/process.c	/^static int process_is_stopped(pid_t pid)$/;"	f	file:
+process_was_stopped	arch-i386/process.c	/^static int process_was_stopped = 0;$/;"	v	file:
+process_was_stopped	arch/process.c	/^static int process_was_stopped = 0;$/;"	v	file:
+prot	cpimage.h	/^    int prot;$/;"	m	struct:cp_vma
+proto	cpimage.h	/^    int proto;$/;"	m	struct:cp_socket
+r_fcntl	arch-i386/process.c	/^int r_fcntl(pid_t pid, int fd, int cmd)$/;"	f
+r_fcntl	arch/process.c	/^int r_fcntl(pid_t pid, int fd, int cmd)$/;"	f
+r_getpeername	arch-i386/process.c	/^int r_getpeername(pid_t pid, int s, struct sockaddr *name, socklen_t *namelen)$/;"	f
+r_getpeername	arch/process.c	/^int r_getpeername(pid_t pid, int s, struct sockaddr *name, socklen_t *namelen)$/;"	f
+r_getsockname	arch-i386/process.c	/^int r_getsockname(pid_t pid, int s, struct sockaddr *name, socklen_t *namelen)$/;"	f
+r_getsockname	arch/process.c	/^int r_getsockname(pid_t pid, int s, struct sockaddr *name, socklen_t *namelen)$/;"	f
+r_getsockopt	arch-i386/process.c	/^int r_getsockopt(pid_t pid, int s, int level, int optname, void* optval, socklen_t *optlen)$/;"	f
+r_getsockopt	arch/process.c	/^int r_getsockopt(pid_t pid, int s, int level, int optname, void* optval, socklen_t *optlen)$/;"	f
+r_ioctl	arch-i386/process.c	/^int r_ioctl(pid_t pid, int fd, int req, void* val)$/;"	f
+r_ioctl	arch/process.c	/^int r_ioctl(pid_t pid, int fd, int req, void* val)$/;"	f
+r_lseek	arch-i386/process.c	/^off_t r_lseek(pid_t pid, int fd, off_t offset, int whence)$/;"	f
+r_lseek	arch/process.c	/^off_t r_lseek(pid_t pid, int fd, off_t offset, int whence)$/;"	f
+r_mprotect	arch-i386/process.c	/^int r_mprotect(pid_t pid, void* start, size_t len, int flags)$/;"	f
+r_mprotect	arch/process.c	/^int r_mprotect(pid_t pid, void* start, size_t len, int flags)$/;"	f
+r_read	arch-i386/process.c	/^ssize_t r_read(pid_t pid, int fd, void* buf, size_t count)$/;"	f
+r_read	arch/process.c	/^ssize_t r_read(pid_t pid, int fd, void* buf, size_t count)$/;"	f
+r_rt_sigaction	arch-i386/process.c	/^int r_rt_sigaction(pid_t pid, int sig, struct k_sigaction *ksa, struct k_sigaction *oksa, size_t masksz)$/;"	f
+r_rt_sigaction	arch/process.c	/^int r_rt_sigaction(pid_t pid, int sig, struct k_sigaction *ksa, struct k_sigaction *oksa, size_t masksz)$/;"	f
+raw_data	writer_raw.c	/^struct raw_data {$/;"	s	file:
+raw_dup2	writer_raw.c	/^static void raw_dup2(void *fptr, int newfd)$/;"	f	file:
+raw_finish	writer_raw.c	/^static void raw_finish(void *fptr)$/;"	f	file:
+raw_ftell	writer_raw.c	/^static long raw_ftell(void *fptr)$/;"	f	file:
+raw_init	writer_raw.c	/^static void *raw_init(int fd, int mode)$/;"	f	file:
+raw_ops	writer_raw.c	/^struct stream_ops raw_ops = {$/;"	v	typeref:struct:stream_ops
+raw_read	writer_raw.c	/^static int raw_read(void *fptr, void *buf, int len)$/;"	f	file:
+raw_write	writer_raw.c	/^static int raw_write(void *fptr, void *buf, int len)$/;"	f	file:
+rcv_mss	linux/tcpcp.h	/^	uint16_t rcv_mss;	\/* MSS received *\/$/;"	m	struct:tcpcp_icie_fixgen
+rcv_nxt	linux/tcpcp.h	/^	uint32_t rcv_nxt;	\/* sequence number of next new byte expected to$/;"	m	struct:tcpcp_icie_vargen
+rcv_wnd	linux/tcpcp.h	/^	uint32_t rcv_wnd;	\/* window advertized to peer *\/$/;"	m	struct:tcpcp_icie_vargen
+rcv_wscale	linux/tcpcp.h	/^	uint8_t rcv_wscale;	\/* receive window scale (0 if unused) *\/$/;"	m	struct:tcpcp_icie_fixgen
+read	cpimage.h	/^    int (*read)(void *data, void *buf, int len);$/;"	m	struct:stream_ops
+read_bit	cpimage_r.c	/^void read_bit(void *fptr, void *buf, int len)$/;"	f
+read_chunk	cpimage_r.c	/^int read_chunk(void *fptr, int action)$/;"	f
+read_chunk_fd	cp_r_fd.c	/^void read_chunk_fd(void *fptr, int action)$/;"	f
+read_chunk_fd_console	cp_r_fd_console.c	/^void read_chunk_fd_console(void *fptr, struct cp_fd *fd, int action)$/;"	f
+read_chunk_fd_fifo	cp_r_fd_fifo.c	/^void read_chunk_fd_fifo(void *fptr, struct cp_fd *fd, int action)$/;"	f
+read_chunk_fd_file	cp_r_fd_file.c	/^void read_chunk_fd_file(void *fptr, struct cp_fd *fd, int action)$/;"	f
+read_chunk_fd_maxfd	cp_r_fd.c	/^static void read_chunk_fd_maxfd(void *fptr, struct cp_fd *fd, int action)$/;"	f	file:
+read_chunk_fd_socket	cp_r_fd_socket.c	/^void read_chunk_fd_socket(void *fptr, struct cp_fd *fd, int action)$/;"	f
+read_chunk_fd_socket_tcp	cp_r_fd_socket.c	/^static void read_chunk_fd_socket_tcp(void *fptr, int fd, struct cp_socket_tcp *tcp,$/;"	f	file:
+read_chunk_fd_socket_unix	cp_r_fd_socket.c	/^static void read_chunk_fd_socket_unix(void *fptr, int fd,$/;"	f	file:
+read_chunk_fd_socket_x	cp_r_fd_socket.c	/^static void read_chunk_fd_socket_x(void *fptr, int fd, int action)$/;"	f	file:
+read_chunk_header	cp_r_header.c	/^void read_chunk_header(void *fptr, int action)$/;"	f
+read_chunk_misc	cp_r_misc.c	/^void read_chunk_misc(void *fptr, int action)$/;"	f
+read_chunk_regs	arch-i386/cp_r_regs.c	/^void read_chunk_regs(void *fptr, int action)$/;"	f
+read_chunk_regs	arch/cp_r_regs.c	/^void read_chunk_regs(void *fptr, int action)$/;"	f
+read_chunk_sighand	cp_r_sighand.c	/^void read_chunk_sighand(void *fptr, int action)$/;"	f
+read_chunk_tls	arch-i386/cp_r_tls.c	/^void read_chunk_tls(void *fptr, int action)$/;"	f
+read_chunk_tls	arch/cp_r_tls.c	/^void read_chunk_tls(void *fptr, int action)$/;"	f
+read_chunk_vma	cp_r_vma.c	/^void read_chunk_vma(void *fptr, int action)$/;"	f
+read_process	stub_common.c	/^static void read_process()$/;"	f	file:
+read_string	cpimage_r.c	/^char *read_string(void *fptr, char *buf, int maxlen)$/;"	f
+real_argc	stub_common.c	/^int real_argc;$/;"	v
+real_argv	stub_common.c	/^char** real_argv;$/;"	v
+real_environ	stub_common.c	/^char** real_environ;$/;"	v
+real_fd	stub_common.c	/^static int image_fd, real_fd;$/;"	v	file:
+real_main	stub_common.c	/^void real_main(int argc, char** argv)$/;"	f
+reforked	stub_common.c	/^int reforked = 0;$/;"	v
+regs	cpimage.h	/^	struct cp_regs regs;$/;"	m	union:cp_chunk::__anon7	typeref:struct:cp_chunk::__anon7::cp_regs
+relocate_stack	arch-i386/stub.h	/^static inline void relocate_stack()$/;"	f
+relocate_stack	arch/stub.h	/^static inline void relocate_stack()$/;"	f
+request_to_str	x.h	/^static inline const char* request_to_str(int req) $/;"	f
+restore_fd_console	cp_r_fd_console.c	/^static void restore_fd_console(int fd, struct cp_console *console)$/;"	f	file:
+restore_fd_file	cp_r_fd_file.c	/^void restore_fd_file(struct cp_fd *fd, int action)$/;"	f
+restore_page	arch-i386/process.c	/^int restore_page(pid_t target, void* addr, char* page)$/;"	f
+restore_page	arch/process.c	/^int restore_page(pid_t target, void* addr, char* page)$/;"	f
+restore_registers	arch-i386/process.c	/^static int restore_registers(pid_t pid, struct user_regs_struct *r)$/;"	f	file:
+restore_registers	arch/process.c	/^static int restore_registers(pid_t pid, struct user_regs_struct *r)$/;"	f	file:
+rt_sigaction	arch-i386/arch.h	/^static inline int rt_sigaction(int sig, const struct k_sigaction* ksa,$/;"	f
+rt_sigaction	arch/arch.h	/^static inline int rt_sigaction(int sig, const struct k_sigaction* ksa,$/;"	f
+s_tcp	cpimage.h	/^	struct cp_socket_tcp s_tcp;$/;"	m	union:cp_socket::__anon5	typeref:struct:cp_socket::__anon5::cp_socket_tcp
+s_udp	cpimage.h	/^	struct cp_socket_udp s_udp;$/;"	m	union:cp_socket::__anon5	typeref:struct:cp_socket::__anon5::cp_socket_udp
+s_unix	cpimage.h	/^	struct cp_socket_unix s_unix;$/;"	m	union:cp_socket::__anon5	typeref:struct:cp_socket::__anon5::cp_socket_unix
+sa_flags	arch-i386/arch.h	/^    unsigned long sa_flags;$/;"	m	struct:k_sigaction
+sa_flags	arch/arch.h	/^    unsigned long sa_flags;$/;"	m	struct:k_sigaction
+sa_hand	arch-i386/arch.h	/^    __sighandler_t sa_hand;$/;"	m	struct:k_sigaction
+sa_hand	arch/arch.h	/^    __sighandler_t sa_hand;$/;"	m	struct:k_sigaction
+sa_mask	arch-i386/arch.h	/^    arch_sigset_t sa_mask;$/;"	m	struct:k_sigaction
+sa_mask	arch/arch.h	/^    arch_sigset_t sa_mask;$/;"	m	struct:k_sigaction
+sa_restorer	arch-i386/arch.h	/^    void (*sa_restorer)(void);$/;"	m	struct:k_sigaction
+sa_restorer	arch/arch.h	/^    void (*sa_restorer)(void);$/;"	m	struct:k_sigaction
+safe_read	common.c	/^void safe_read(int fd, void* dest, size_t count, char* desc)$/;"	f
+save_registers	arch-i386/process.c	/^static int save_registers(pid_t pid, struct user_regs_struct *r)$/;"	f	file:
+save_registers	arch/process.c	/^static int save_registers(pid_t pid, struct user_regs_struct *r)$/;"	f	file:
+scrape_contents	cp_w_fd_file.c	/^static int scrape_contents(pid_t pid, int fd, int size, void* data)$/;"	f	file:
+scribble_zone	cp_w_vma.c	/^unsigned long scribble_zone = 0; \/* somewhere to scribble on in child *\/$/;"	v
+seek_to_image	arch-i386/stub.c	/^void seek_to_image(int fd)$/;"	f
+seek_to_image	arch/stub.c	/^void seek_to_image(int fd)$/;"	f
+self_other_fd	cpimage.h	/^    int self_other_fd;$/;"	m	struct:cp_fifo
+seq	linux/tcpcp.h	/^	uint32_t seq;		\/* sequence number of first byte *\/$/;"	m	struct:tcpcp_icie_buf
+set_last_pid	fork2_helper.c	/^int set_last_pid(int pid)$/;"	f
+set_syscall_return	arch-i386/process.c	/^void set_syscall_return(struct user* user, unsigned long val) {$/;"	f
+set_syscall_return	arch/process.c	/^void set_syscall_return(struct user* user, unsigned long val) {$/;"	f
+set_thread_area	arch-i386/asmfuncs.S	/^set_thread_area:$/;"	l
+set_thread_area	arch/asmfuncs.S	/^set_thread_area:$/;"	l
+sid	cpimage.h	/^    pid_t pid, tid, pgid, sid;$/;"	m	struct:cp_header
+sig	arch-i386/arch.h	/^	unsigned long sig[_ARCH_NSIG_WORDS];$/;"	m	struct:__anon9
+sig	arch/arch.h	/^	unsigned long sig[_ARCH_NSIG_WORDS];$/;"	m	struct:__anon8
+sig_num	cpimage.h	/^    int sig_num;$/;"	m	struct:cp_sighand
+sighand	cpimage.h	/^	struct cp_sighand sighand;$/;"	m	union:cp_chunk::__anon7	typeref:struct:cp_chunk::__anon7::cp_sighand
+sin	cpimage.h	/^    struct sockaddr_in sin;$/;"	m	struct:cp_socket_tcp	typeref:struct:cp_socket_tcp::sockaddr_in
+sin	cpimage.h	/^    struct sockaddr_in sin;$/;"	m	struct:cp_socket_udp	typeref:struct:cp_socket_udp::sockaddr_in
+size	cpimage.h	/^    int size;$/;"	m	struct:cp_file
+skip_to_next	cp_w_fd_socket.c	105;"	d	file:
+skip_to_next	cp_w_fd_socket.c	142;"	d	file:
+snd_mss	linux/tcpcp.h	/^	uint16_t snd_mss;	\/* MSS sent *\/$/;"	m	struct:tcpcp_icie_fixgen
+snd_nxt	linux/tcpcp.h	/^	uint32_t snd_nxt;	\/* sequence number of next new byte to send *\/$/;"	m	struct:tcpcp_icie_vargen
+snd_wnd	linux/tcpcp.h	/^	uint32_t snd_wnd;	\/* window received from peer *\/$/;"	m	struct:tcpcp_icie_vargen
+snd_wscale	linux/tcpcp.h	/^	uint8_t	snd_wscale;	\/* send window scale (0 if unused) *\/$/;"	m	struct:tcpcp_icie_fixgen
+socket	cpimage.h	/^	struct cp_socket socket;$/;"	m	union:cp_fd::__anon6	typeref:struct:cp_fd::__anon6::cp_socket
+sockname	cpimage.h	/^    struct sockaddr_un sockname;$/;"	m	struct:cp_socket_unix	typeref:struct:cp_socket_unix::sockaddr_un
+start	cpimage.h	/^    unsigned long start, length;$/;"	m	struct:cp_vma
+start_ptrace	arch-i386/process.c	/^static void start_ptrace(pid_t pid)$/;"	f	file:
+start_ptrace	arch/process.c	/^static void start_ptrace(pid_t pid)$/;"	f	file:
+start_supervisor	supervisor.c	/^int start_supervisor(pid_t oldpid)$/;"	f
+stat	linux/tcpcp.h	/^	struct tcpcp_icie_stat stat; \/* connection statistics *\/$/;"	m	struct:tcpcp_ici	typeref:struct:tcpcp_ici::tcpcp_icie_stat
+state	cp_w_fd_socket.c	/^    int state;$/;"	m	struct:unix_sock_info_t	file:
+state	linux/tcpcp.h	/^ 	uint8_t state;		\/* connection state; from linux\/tcp.h *\/$/;"	m	struct:tcpcp_icie_vargen
+stopped	cpimage.h	/^    int stopped;$/;"	m	struct:cp_regs
+stream_ops	cpimage.h	/^struct stream_ops {$/;"	s
+sys_clone	arch-i386/arch.h	/^static inline int sys_clone(int flags, void* child_stack) {$/;"	f
+sys_clone	arch/arch.h	/^static inline int sys_clone(int flags, void* child_stack) {$/;"	f
+syscall_check	common.c	/^long syscall_check(int retval, int can_be_fake, char* desc, ...)$/;"	f
+syscall_loc	cp_w_vma.c	/^unsigned long syscall_loc   = 0; \/* address of a syscall instruction  *\/$/;"	v
+tail	list.h	/^	struct item *head, *tail; $/;"	m	struct:list	typeref:struct:list::
+target_pid	cpimage.h	/^    pid_t target_pid;$/;"	m	struct:cp_fifo
+tcp_dport	linux/tcpcp.h	/^	uint16_t tcp_dport;	\/* TCP destination port *\/$/;"	m	struct:tcpcp_icie_id
+tcp_flags	linux/tcpcp.h	/^	uint8_t tcp_flags;	\/* TCP flags; from linux\/tcp.h *\/$/;"	m	struct:tcpcp_icie_fixgen
+tcp_get_ici	tcpcp_w.c	/^static int tcp_get_ici(pid_t pid, int s, void *ici, int size)$/;"	f	file:
+tcp_max_ici_size	tcpcp_w.c	/^static int tcp_max_ici_size(pid_t pid, int s,int *size)$/;"	f	file:
+tcp_set_cp_fn	tcpcp_r.c	/^static int tcp_set_cp_fn(int s,int function_code)$/;"	f	file:
+tcp_set_ici	tcpcp_r.c	/^static int tcp_set_ici(int s,const void *ici,int size)$/;"	f	file:
+tcp_sport	linux/tcpcp.h	/^	uint16_t tcp_sport;	\/* TCP source port *\/$/;"	m	struct:tcpcp_icie_id
+tcpcp_activate	tcpcp_r.c	/^int tcpcp_activate(int s)$/;"	f
+tcpcp_cong_mode	tcpcp.h	/^enum tcpcp_cong_mode {$/;"	g
+tcpcp_create	tcpcp_r.c	/^int tcpcp_create(const void *ici)$/;"	f
+tcpcp_fn	linux/tcpcp.h	221;"	d
+tcpcp_get	tcpcp_w.c	/^void *tcpcp_get(pid_t pid, int s)$/;"	f
+tcpcp_getici	linux/tcpcp.h	219;"	d
+tcpcp_ici	linux/tcpcp.h	/^struct tcpcp_ici {$/;"	s
+tcpcp_icie_buf	linux/tcpcp.h	/^struct tcpcp_icie_buf {$/;"	s
+tcpcp_icie_cong	linux/tcpcp.h	/^struct tcpcp_icie_cong {$/;"	s
+tcpcp_icie_fixgen	linux/tcpcp.h	/^struct tcpcp_icie_fixgen {$/;"	s
+tcpcp_icie_id	linux/tcpcp.h	/^struct tcpcp_icie_id {$/;"	s
+tcpcp_icie_id4	linux/tcpcp.h	/^struct tcpcp_icie_id4 {$/;"	s
+tcpcp_icie_stat	linux/tcpcp.h	/^struct tcpcp_icie_stat {$/;"	s
+tcpcp_icie_vargen	linux/tcpcp.h	/^struct tcpcp_icie_vargen {$/;"	s
+tcpcp_icie_version	linux/tcpcp.h	/^struct tcpcp_icie_version {$/;"	s
+tcpcp_maxicisize	linux/tcpcp.h	218;"	d
+tcpcp_set_cong	tcpcp_r.c	/^int tcpcp_set_cong(void *ici,enum tcpcp_cong_mode cong_mode)$/;"	f
+tcpcp_set_dst	tcpcp_r.c	/^int tcpcp_set_dst(void *ici,const struct sockaddr *addr)$/;"	f
+tcpcp_setici	linux/tcpcp.h	220;"	d
+tcpcp_size	tcpcp_r.c	/^int tcpcp_size(const void *ici)$/;"	f
+tcpcp_size	tcpcp_w.c	/^int tcpcp_size(const void *ici)$/;"	f
+termios	cpimage.h	/^    struct termios termios;$/;"	m	struct:cp_console	typeref:struct:cp_console::termios
+tid	cpimage.h	/^    pid_t pid, tid, pgid, sid;$/;"	m	struct:cp_header
+tls	cpimage.h	/^	struct cp_tls tls;$/;"	m	union:cp_chunk::__anon7	typeref:struct:cp_chunk::__anon7::cp_tls
+tls_base_address	arch-i386/cp_r_tls.c	/^static int tls_base_address;$/;"	v	file:
+tls_base_address	arch/cp_r_tls.c	/^static int tls_base_address;$/;"	v	file:
+tls_segv_handler	arch-i386/cp_r_tls.c	/^static void tls_segv_handler(int sig, siginfo_t *si, void *ucontext)$/;"	f	file:
+tls_segv_handler	arch/cp_r_tls.c	/^static void tls_segv_handler(int sig, siginfo_t *si, void *ucontext)$/;"	f	file:
+tramp	stub_common.c	/^char tramp[100];$/;"	v
+translate_ioctl	supervisor.c	/^int translate_ioctl(struct user_regs_struct *r, pid_t oldpid, pid_t newpid, int in)$/;"	f
+translate_syscall	supervisor.c	/^int translate_syscall(struct user_regs_struct *r, pid_t oldpid, pid_t newpid, int in)$/;"	f
+ts_gen	linux/tcpcp.h	/^	uint32_t ts_gen;	\/* current locally generated timestamp *\/$/;"	m	struct:tcpcp_icie_vargen
+ts_recent	linux/tcpcp.h	/^	uint32_t ts_recent;	\/* cached timestamp from peer (0 if none) *\/$/;"	m	struct:tcpcp_icie_vargen
+type	cp_w_fd_socket.c	/^    int type;$/;"	m	struct:unix_sock_info_t	file:
+type	cpimage.h	/^    int type, listening;$/;"	m	struct:cp_socket_unix
+type	cpimage.h	/^    int type;$/;"	m	struct:cp_chunk
+type	cpimage.h	/^    int type;$/;"	m	struct:cp_fd
+type	linux/tcpcp.h	/^	uint8_t type;		\/* buffer type (TCPCP_ICIE_BUF_*, see below) *\/$/;"	m	struct:tcpcp_icie_buf
+u	cpimage.h	/^    struct user_desc* u;$/;"	m	struct:cp_tls	typeref:struct:cp_tls::user_desc
+uid	cpimage.h	/^    uid_t uid;$/;"	m	struct:cp_header
+unix_sock_info_t	cp_w_fd_socket.c	/^struct unix_sock_info_t {$/;"	s	file:
+usage	freeze.c	/^void usage(char* argv0)$/;"	f
+usage	stub_common.c	/^void usage(char* argv0)$/;"	f
+user_data	cpimage.h	/^    struct user *user_data;$/;"	m	struct:cp_regs	typeref:struct:cp_regs::user
+v	linux/tcpcp.h	/^	struct tcpcp_icie_version v; \/* ICI version and flags *\/$/;"	m	struct:tcpcp_ici	typeref:struct:tcpcp_ici::tcpcp_icie_version
+v4	linux/tcpcp.h	/^		struct tcpcp_icie_id4 v4; \/* IPv4 *\/$/;"	m	union:tcpcp_icie_id::__anon2	typeref:struct:tcpcp_icie_id::__anon2::tcpcp_icie_id4
+vargen	linux/tcpcp.h	/^	struct tcpcp_icie_vargen vargen; \/* variable general data *\/$/;"	m	struct:tcpcp_ici	typeref:struct:tcpcp_ici::tcpcp_icie_vargen
+vdso_end	cp_w_vma.c	/^unsigned long vdso_end      = 0; \/* end address of vdso page          *\/$/;"	v
+vdso_start	cp_w_vma.c	/^unsigned long vdso_start    = 0; \/* start address of vdso page        *\/$/;"	v
+verbosity	stub_common.c	/^int verbosity = 0;$/;"	v
+vma	cpimage.h	/^	struct cp_vma vma;$/;"	m	union:cp_chunk::__anon7	typeref:struct:cp_chunk::__anon7::cp_vma
+want_pid	stub_common.c	/^int want_pid = 0;$/;"	v
+write	cpimage.h	/^    int (*write)(void *data, void *buf, int len);$/;"	m	struct:stream_ops
+write_bit	cpimage_w.c	/^void write_bit(void *fptr, void *buf, int len)$/;"	f
+write_chunk	cpimage_w.c	/^void write_chunk(void *fptr, struct cp_chunk *chunk)$/;"	f
+write_chunk_fd	cp_w_fd.c	/^void write_chunk_fd(void *fptr, struct cp_fd *data)$/;"	f
+write_chunk_fd_console	cp_w_fd_console.c	/^void write_chunk_fd_console(void *fptr, struct cp_fd *fd)$/;"	f
+write_chunk_fd_fifo	cp_w_fd_fifo.c	/^void write_chunk_fd_fifo(void *fptr, struct cp_fifo *fifo)$/;"	f
+write_chunk_fd_file	cp_w_fd_file.c	/^void write_chunk_fd_file(void *fptr, struct cp_file *file)$/;"	f
+write_chunk_fd_socket	cp_w_fd_socket.c	/^void write_chunk_fd_socket(void *fptr, struct cp_socket *socket)$/;"	f
+write_chunk_fd_socket_tcp	cp_w_fd_socket.c	/^static void write_chunk_fd_socket_tcp(void *fptr, struct cp_socket_tcp *tcp)$/;"	f	file:
+write_chunk_fd_socket_unix	cp_w_fd_socket.c	/^static void write_chunk_fd_socket_unix(void *fptr, struct cp_socket_unix *u)$/;"	f	file:
+write_chunk_header	cp_w_header.c	/^void write_chunk_header(void *fptr, struct cp_header *data)$/;"	f
+write_chunk_i387_data	arch-i386/cp_w_i387.c	/^void write_chunk_i387_data(void *fptr, struct cp_i387_data *data)$/;"	f
+write_chunk_i387_data	arch/cp_w_i387.c	/^void write_chunk_i387_data(void *fptr, struct cp_i387_data *data)$/;"	f
+write_chunk_misc	cp_w_misc.c	/^void write_chunk_misc(void *fptr, struct cp_misc *data)$/;"	f
+write_chunk_regs	arch-i386/cp_w_regs.c	/^void write_chunk_regs(void *fptr, struct cp_regs *data)$/;"	f
+write_chunk_regs	arch/cp_w_regs.c	/^void write_chunk_regs(void *fptr, struct cp_regs *data)$/;"	f
+write_chunk_sighand	cp_w_sighand.c	/^void write_chunk_sighand(void *fptr, struct cp_sighand *data)$/;"	f
+write_chunk_tls	arch-i386/cp_w_tls.c	/^void write_chunk_tls(void *fptr, struct cp_tls *data)$/;"	f
+write_chunk_tls	arch/cp_w_tls.c	/^void write_chunk_tls(void *fptr, struct cp_tls *data)$/;"	f
+write_chunk_vma	cp_w_vma.c	/^void write_chunk_vma(void *fptr, struct cp_vma *data)$/;"	f
+write_final_chunk	cpimage_w.c	/^static void write_final_chunk(void *fptr)$/;"	f	file:
+write_process	cpimage_w.c	/^void write_process(int fd, struct list l)$/;"	f
+write_string	cpimage_w.c	/^void write_string(void *fptr, char *buf)$/;"	f
+write_stub	arch-i386/elfwriter.c	/^void write_stub(int fd, long offset)$/;"	f
+write_stub	arch/elfwriter.c	/^void write_stub(int fd, long offset)$/;"	f
+write_tramp_jump	arch-i386/elfwriter.c	/^static void write_tramp_jump(char **tramp, long entry)$/;"	f	file:
+write_tramp_jump	arch/elfwriter.c	/^static void write_tramp_jump(char **tramp, long entry)$/;"	f	file:
+write_tramp_snippet	arch-i386/elfwriter.c	/^static void write_tramp_snippet(char** tramp, long mmap_addr, long mmap_len,$/;"	f	file:
+write_tramp_snippet	arch/elfwriter.c	/^static void write_tramp_snippet(char** tramp, long mmap_addr, long mmap_len,$/;"	f	file:
+wrkmem	writer_lzo.c	/^    lzo_byte *in, *out, *wrkmem;$/;"	m	struct:lzo_data	file:
+x_requests	x.h	/^static const char *x_requests[128] = $/;"	v
+x_responder	gtk_support.c	/^void x_responder(int fd) {$/;"	f
+xauthority_environ	gtk_support.c	/^char xauthority_environ[80];$/;"	v
+xfree	common.c	/^void xfree(void *p)$/;"	f
+xmalloc	common.c	/^void *xmalloc(int len)$/;"	f

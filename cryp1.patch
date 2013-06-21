@@ -1,0 +1,310 @@
+Only in src/.: @!
+Only in src/.: 1
+Common subdirectories: src/./arch and ../../../cryopid-0.5.9.1/src/./arch
+Common subdirectories: src/./arch-i386 and ../../../cryopid-0.5.9.1/src/./arch-i386
+diff -cB src/./common.c ../../../cryopid-0.5.9.1/src/./common.c
+*** src/./common.c	2013-02-24 01:46:40.893312515 +0900
+--- ../../../cryopid-0.5.9.1/src/./common.c	2006-11-29 20:42:03.000000000 +0900
+***************
+*** 6,59 ****
+  #include <string.h>
+  #include <unistd.h>
+  #include <sys/mman.h>
+! //#include <asm/page.h>
+! #include <sys/user.h>
+  
+  #include "cryopid.h"
+  
+- /*Mohanish*/
+- int __sprintf_chk (char *__restrict __s, int __flag, size_t __slen,
+-                           __const char *__restrict __format, ...)
+- {
+- 	return 0;
+- }
+- 
+- extern int __snprintf_chk (char *__restrict __s, size_t __n, int __flag,
+-                            size_t __slen, __const char *__restrict __format,
+-                            ...)
+- {
+- 	return 0;
+- }
+- 
+- extern int __vfprintf_chk (FILE *__restrict __stream, int __flag,
+-                            __const char *__restrict __format, _G_va_list __ap)
+- {
+- 	return 0;
+- }
+- 
+- int __fprintf_chk (FILE *__restrict __stream, int __flag,
+-                           __const char *__restrict __format, ...)
+- {
+- 	return 0;
+- }
+- 
+- 
+- int __open_2 (__const char *__path, int __oflag)
+- {
+- 	return 0;
+- }
+- 
+- ssize_t __read_chk (int __fd, void *__buf, size_t __nbytes,
+-                            size_t __buflen)
+- {
+- 	return 0;
+- }
+- 
+- void __stack_chk_fail(void)
+- {
+- 	return 0;
+- }
+- 
+  long syscall_check(int retval, int can_be_fake, char* desc, ...)
+  {
+      va_list va_args;
+--- 6,15 ----
+  #include <string.h>
+  #include <unistd.h>
+  #include <sys/mman.h>
+! #include <asm/page.h>
+  
+  #include "cryopid.h"
+  
+  long syscall_check(int retval, int can_be_fake, char* desc, ...)
+  {
+      va_list va_args;
+***************
+*** 103,110 ****
+      if (next_free_addr + full_len > MALLOC_END)
+  	return NULL; /* out of memory here */
+      void *p = mmap((void*)next_free_addr, full_len, PROT_READ|PROT_WRITE,
+! 	    MAP_FIXED, 0, 0);
+! 	printf("Mohanish:: Error %d\n",errno);
+      assert(p == (void*)next_free_addr);
+      next_free_addr += full_len;
+      return p;
+--- 59,65 ----
+      if (next_free_addr + full_len > MALLOC_END)
+  	return NULL; /* out of memory here */
+      void *p = mmap((void*)next_free_addr, full_len, PROT_READ|PROT_WRITE,
+! 	    MAP_FIXED|MAP_PRIVATE|MAP_ANONYMOUS, 0, 0);
+      assert(p == (void*)next_free_addr);
+      next_free_addr += full_len;
+      return p;
+diff -cB src/./cpimage_r.c ../../../cryopid-0.5.9.1/src/./cpimage_r.c
+*** src/./cpimage_r.c	2012-10-21 11:56:11.118623968 +0900
+--- ../../../cryopid-0.5.9.1/src/./cpimage_r.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 96,102 ****
+  	    break;
+  #ifdef __i386__
+  	case CP_CHUNK_I387_DATA:
+! 	    //read_chunk_i387_data(fptr, action);		/*Mohanish :: Avoiding call*/
+  	    break;
+  	case CP_CHUNK_TLS:
+  	    read_chunk_tls(fptr, action);
+--- 96,102 ----
+  	    break;
+  #ifdef __i386__
+  	case CP_CHUNK_I387_DATA:
+! 	    read_chunk_i387_data(fptr, action);
+  	    break;
+  	case CP_CHUNK_TLS:
+  	    read_chunk_tls(fptr, action);
+Only in src/.: cpimage_r.o
+Only in src/.: cpimage_w.o
+Only in src/.: cp_r_fd_console.o
+Only in src/.: cp_r_fd_fifo.o
+Only in src/.: cp_r_fd_file.o
+Only in src/.: cp_r_fd.o
+Only in src/.: cp_r_fd_socket.o
+Only in src/.: cp_r_header.o
+Only in src/.: cp_r_misc.o
+Only in src/.: cp_r_sighand.o
+Only in src/.: cp_r_vma.o
+diff -cB src/./cp_w_fd.c ../../../cryopid-0.5.9.1/src/./cp_w_fd.c
+*** src/./cp_w_fd.c	2013-01-03 23:27:57.645646994 +0900
+--- ../../../cryopid-0.5.9.1/src/./cp_w_fd.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 55,61 ****
+      dev_t term_dev = 0;
+  
+      snprintf(tmp_fn, 80, "/proc/%d/stat", pid);
+- //	printf("%s\n",tmp_fn);
+      memset(stat_line, 0, sizeof(stat_line));
+      f = fopen(tmp_fn, "r");
+      fgets(stat_line, 80, f);
+--- 55,60 ----
+Only in src/.: cp_w_fd_console.o
+Only in src/.: .cp_w_fd.c.swp
+Only in src/.: cp_w_fd_fifo.o
+Only in src/.: cp_w_fd_file.o
+Only in src/.: cp_w_fd.o
+Only in src/.: cp_w_fd_socket.o
+Only in src/.: cp_w_header.o
+Only in src/.: cp_w_misc.o
+Only in src/.: cp_w_sighand.o
+diff -cB src/./cp_w_vma.c ../../../cryopid-0.5.9.1/src/./cp_w_vma.c
+*** src/./cp_w_vma.c	2013-01-03 23:03:46.414450732 +0900
+--- ../../../cryopid-0.5.9.1/src/./cp_w_vma.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 5,12 ****
+  #include <fcntl.h>
+  #include <stdio.h>
+  #include <unistd.h>
+! //#include <asm/page.h>
+! #include <sys/user.h>
+  
+  #include "cpimage.h"
+  #include "process.h"
+--- 5,11 ----
+  #include <fcntl.h>
+  #include <stdio.h>
+  #include <unistd.h>
+! #include <asm/page.h>
+  
+  #include "cpimage.h"
+  #include "process.h"
+***************
+*** 325,334 ****
+      int vma_no = 0;
+  
+      list_init(work_list);
+- 	
+-     snprintf(tmp_fn,30,"/proc/%d/maps",pid);
+  
+      f = fopen(tmp_fn, "r");
+      while ((ret = fgets(map_line, sizeof(map_line), f)) || i) {
+  	if (!ret)
+  	    strncpy(map_line, i->p, sizeof(map_line));
+--- 324,333 ----
+      int vma_no = 0;
+  
+      list_init(work_list);
+  
++     snprintf(tmp_fn, 30, "/proc/%d/maps", pid);
+      f = fopen(tmp_fn, "r");
++ 
+      while ((ret = fgets(map_line, sizeof(map_line), f)) || i) {
+  	if (!ret)
+  	    strncpy(map_line, i->p, sizeof(map_line));
+***************
+*** 358,364 ****
+  		    i = work_list.head;
+  		continue;
+  	}
+- 	printf("Mohanish\n");
+  	vma_no++;
+  	list_append(l, chunk);
+  	chunk = NULL;
+--- 357,362 ----
+Only in src/.: .cp_w_vma.c.swo
+Only in src/.: .cp_w_vma.c.swp
+Only in src/.: cp_w_vma.o
+Only in src/.: cscope.out
+Only in src/.: fork2_helper
+Only in src/.: fork2.o
+Only in src/.: freeze
+diff -cB src/./freeze.c ../../../cryopid-0.5.9.1/src/./freeze.c
+*** src/./freeze.c	2013-02-06 23:18:44.499493025 +0900
+--- ../../../cryopid-0.5.9.1/src/./freeze.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 63,69 ****
+  	};
+  
+  	c = getopt_long(argc, argv, "l"/*"fcw:"*/, long_options, &option_index);
+- 	printf("Mohanish:: Inside main c=%c %s\n",c,argv[1]);
+  	if (c == -1)
+  	    break;
+  	switch(c) {
+--- 63,68 ----
+***************
+*** 105,111 ****
+      get_process(target_pid, flags, &proc_image, &offset);
+  
+      fd = open(argv[optind], O_CREAT|O_WRONLY|O_TRUNC, 0777);
+- 	printf("fd=%s\n",argv[optind]);
+      if (fd == -1) {
+  	fprintf(stderr, "Couldn't open %s for writing: %s\n", argv[optind],
+  	    strerror(errno));
+--- 104,109 ----
+Only in src/.: .freeze.c.swp
+Only in src/.: freeze.o
+Common subdirectories: src/./linux and ../../../cryopid-0.5.9.1/src/./linux
+Only in src/.: list.o
+diff -cB src/./Makefile ../../../cryopid-0.5.9.1/src/./Makefile
+*** src/./Makefile	2013-02-06 23:06:52.491962387 +0900
+--- ../../../cryopid-0.5.9.1/src/./Makefile	2006-11-29 20:41:31.000000000 +0900
+***************
+*** 6,17 ****
+  
+  # Test if this gcc supports stack protection (and if so, turn it off).
+  ifeq ($(shell $(CC) -E -fno-stack-protector - < /dev/null > /dev/null 2>&1 && echo 1),1)
+! 
+! #Mohanish::Commneting Original
+! #CFLAGS_GCC_SP = -fno-stack-protector
+! 
+! #Mohanish:: Adding flag -D_FORTIFY_SOURCE=0
+! CFLAGS_GCC_SP = -fno-stack-protector -D_FORTIFY_SOURCE=0
+  endif
+  
+  CFLAGS = -g -Wall -Os $(CFLAGS_GCC_SP) -I. -Iarch -D__$(ARCH)__
+--- 6,12 ----
+  
+  # Test if this gcc supports stack protection (and if so, turn it off).
+  ifeq ($(shell $(CC) -E -fno-stack-protector - < /dev/null > /dev/null 2>&1 && echo 1),1)
+! CFLAGS_GCC_SP = -fno-stack-protector
+  endif
+  
+  CFLAGS = -g -Wall -Os $(CFLAGS_GCC_SP) -I. -Iarch -D__$(ARCH)__
+***************
+*** 42,52 ****
+  USE_GTK=n
+  endif
+  
+- #Mohanish:: Forcing Parameters
+- #ARCH=i686
+- #ARCH_OFORMAT=elf32-i686
+- #LD_FORMAT=elf_i686
+- 
+  R_CHUNK_OBJS = cpimage_r.o cp_r_fd.o cp_r_fd_console.o cp_r_fd_file.o cp_r_fd_fifo.o cp_r_fd_socket.o cp_r_misc.o cp_r_sighand.o cp_r_vma.o cp_r_header.o arch/arch_r_objs.o fork2.o
+  W_CHUNK_OBJS = cpimage_w.o cp_w_fd.o cp_w_fd_console.o cp_w_fd_file.o cp_w_fd_fifo.o cp_w_fd_socket.o cp_w_misc.o cp_w_sighand.o cp_w_vma.o cp_w_header.o arch/arch_w_objs.o list.o 
+  COMMON_OBJS = common.c arch/asmfuncs.o
+--- 37,42 ----
+***************
+*** 55,62 ****
+  TARGETS = freeze fork2_helper
+  
+  # How do we get our libc linked into the stub?
+! LIBC = -DPROVIDE_MALLOC -nostdlib -nostartfiles ../dietlibc-$(ARCH)/dietlibc.a -lgcc 
+! #LIBC = -nostdlib -nostartfiles -lgcc
+  
+  # Compile in tcpcp if wanted/needed
+  ifeq ($(USE_TCPCP),y)
+--- 45,52 ----
+  TARGETS = freeze fork2_helper
+  
+  # How do we get our libc linked into the stub?
+! LIBC = -DPROVIDE_MALLOC -nostdlib -nostartfiles ../dietlibc-$(ARCH)/dietlibc.a -lgcc
+! #LIBC = -nostdlib -nostartfiles -lc
+  
+  # Compile in tcpcp if wanted/needed
+  ifeq ($(USE_TCPCP),y)
+diff -cB src/./stub_common.c ../../../cryopid-0.5.9.1/src/./stub_common.c
+*** src/./stub_common.c	2012-11-04 18:11:28.922049020 +0900
+--- ../../../cryopid-0.5.9.1/src/./stub_common.c	2006-07-05 23:53:08.000000000 +0900
+***************
+*** 188,194 ****
+      set_fs();
+  #endif
+  
+- 	printf("Mohanish:: Inside main\n");
+      get_task_size();
+  
+      /* Take a copy of our argc/argv and environment below we blow them away */
+--- 188,193 ----
+Only in src/.: stub-image-gzip.o
+Only in src/.: tags
+Only in src/.: tcpcp_r.o
+Only in src/.: tcpcp_w.o
+Only in src/.: test
+Only in src/.: test.txt
